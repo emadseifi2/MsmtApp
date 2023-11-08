@@ -1,0 +1,92 @@
+﻿@model MsmtApp.Models.Class_FourDigitActivityGroup
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+
+<div class="row">
+    <!-- Material statustic card start -->
+    <div class="col-md-12">
+        <div class="card mat-stat-card">
+            <div class="card-header blue lighten-1 text-white text-right">
+                <h5>ویرایش اطلاعات</h5>
+                <br />
+                <span class="d-inline-block">شما در حال ویرایش اطلاعات گروه </span>
+                <span class="d-inline-block text-Bold text-c-red">
+                    @Model.FDAG_Title
+                </span>
+                <span class="d-inline-block"> می باشید</span>
+            </div>
+            <div class="card-block py-5">
+                <div class="row">
+                    <div class="col-md-8 col-md-8 col-12">
+                        <form asp-controller="AdminPanel" asp-action="IGroup_Edit" asp-route-id="@Model.FDAG_id">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row text-right">
+                                <div class="col-lg-6 col-md-6 col-12 d-none">
+                                    <div class="form-group">
+                                        <label asp-for="FDAG_id" class="disabled"></label>
+                                        <input asp-for="FDAG_id" class="form-control" disabled />
+                                        <span asp-validation-for="FDAG_id" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label asp-for="FDAG_Title" class="control-label"></label>
+                                        <input asp-for="FDAG_Title" class="form-control" />
+                                        <span asp-validation-for="FDAG_Title" class="text-danger"></span>
+                                    </div>
+                                </div>  
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label asp-for="FDAG_FullName" class="disabled"></label>
+                                        <input asp-for="FDAG_FullName" class="form-control"/>
+                                        <span asp-validation-for="FDAG_FullName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label asp-for="FDAG_Code" class="control-label"></label>
+                                        <input asp-for="FDAG_Code" class="form-control" />
+                                        <span asp-validation-for="FDAG_Code" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label asp-for="FDAG_Color" class="control-label"></label>
+                                        <input asp-for="FDAG_Color" class="form-control" type="text" data-coloris />
+                                        <span asp-validation-for="FDAG_Color" class="text-danger"></span>
+                                    </div>
+                                </div>                               
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-12">
+                                    <button class="btn success-color btn-md btn-block waves-effect waves-light text-center p-2 w-100" type="submit" style="border:none;background-color:transparent;color:#fff;padding: 0.7rem 2rem;">
+                                        <div class="d-flex justify-content-center">
+                                            <i class="fa fa-sign-in text-x8 ml-2" aria-hidden="true"></i>
+                                            <p class="m-0">ذخیره</p>
+                                        </div>
+                                    </button>
+                                </div>|
+                                <div class="col-lg-2 col-md-2 col-12">
+                                    <button asp-controller="AdminPanel" asp-action="Main" class="btn info-color btn-md btn-block waves-effect waves-light text-center p-2 w-100" style="border:none;background-color:transparent;color:#fff;padding: 0.7rem 2rem;">
+                                        <div class="d-flex justify-content-center">
+                                            <i class="fa fa-user-plus text-x8 ml-2" aria-hidden="true"></i>
+                                            <p class="m-0">انصراف</p>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-4 col-md-4 col-12">
+                        <img src="./images/Operation.png" class="img-fluid mx-auto" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

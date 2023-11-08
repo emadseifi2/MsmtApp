@@ -1,0 +1,297 @@
+﻿@model MsmtApp.Models.IUnitEdit_ViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mat-stat-card">
+            <div class="card-header blue lighten-1 text-white text-right">
+                <h5>افزودن واحد صنفی جدید</h5>
+                <br />
+                <span class="d-inline-block">شما در حال افزودن یک واحد صنفی جدید می باشید </span>
+            </div>
+            <div class="card-block pb-5">
+                <form asp-controller="AdminPanel" asp-action="IUnit_Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row pt-2">
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <img class="img-fluid mx-auto px-5" src="~/adminpanel/images/portfolio-update.png" />
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-12">
+                            <div class="pageLOader" id="pageLOader">
+                                <div id="loader">
+                                    <div id="shadow"></div>
+                                    <div id="box"></div>
+                                </div>
+                                <p class="text-center text-Bold text-x8 text-white m-0">لطفا چند لحظه صبر نمایید...</p>
+                            </div>
+                            <div id="map" style="height: 400px;display: block;box-shadow: 1px 1px 10px #ccc;border-radius: 5px;border: 2px solid #42a5f5"></div>
+                        </div>
+                    </div>
+                    <div class="row mt-5 text-right">
+                        <div class="col-12 d-none">
+                            <div class="form-group">
+                                <label asp-for="IndustryId" class="disabled"></label>
+                                <input asp-for="IndustryId" class="form-control" disabled />
+                                <span asp-validation-for="IndustryId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-12">
+                            <div class="form-group mb-lg-3 mb-md-3">
+                                <div class="control-label text-center d-inline-block w-lg-20 text-x6" style="border-right: 3px solid #0043ff;padding-bottom: 10px" for="UnitName">
+                                    نام واحد
+                                </div>
+                                <input asp-for="UnitName" class="form-control  text-right d-inline-block w-lg-70 text-x6" />
+                                <span asp-validation-for="UnitName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-12">
+                            <div class="form-group mb-lg-3 mb-md-3">
+                                <div class="control-label text-center d-inline-block w-lg-20 text-x6" style="border-right: 3px solid #0043ff;padding-bottom: 10px" for="Phone">تلفن</div>
+                                <input asp-for="Phone" class="form-control  text-right d-inline-block w-lg-70 text-x6" />
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-12">
+                            <div class="form-group mb-lg-3 mb-md-3">
+                                <div class="control-label text-center d-inline-block w-lg-20 text-x6" style="border-right: 3px solid #0043ff;padding-bottom: 10px" for="ManagingName">مدیر عامل</div>
+                                <input asp-for="ManagingName" class="form-control  text-right d-inline-block w-lg-70 text-x6" />
+                                <span asp-validation-for="ManagingName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-12">
+                            <div class="form-group mb-lg-3 mb-md-3">
+                                <div class="control-label text-center d-inline-block w-lg-30 text-x6" style="border-right: 3px solid #0043ff;padding-bottom: 10px" for="FixMe">نیاز به اصلاح</div>
+                                <select asp-for="FixMe" class="browser-default blue-gradient text-white custom-select w-lg-60 z-depth-1 text-Medium text-center text-x6 py-2 mr-2">
+                                    <option selected>انتخاب نمایید</option>
+                                    <option value="yes">بلی</option>
+                                    <option value="no">خیر</option>                                   
+                                </select>
+                                <span asp-validation-for="FixMe" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group mb-lg-3 mb-md-3">
+                                <div class="control-label text-center d-inline-block w-lg-20 text-x6" style="border-right: 3px solid #0043ff;padding-bottom: 10px" for="Province">استان</div>
+                                <select asp-for="Province" class="browser-default blue-gradient text-white custom-select w-lg-70 z-depth-1 text-Medium text-center text-x6 py-2 mr-2" id="ProvineSelect" onchange="MainClieint.OnChangeProvin()">
+                                    <option selected>انتخاب نمایید</option>
+                                    <option value="خراسان شمالی">خراسان شمالی</option>
+                                    <option value="کرمان">کرمان</option>
+                                    <option value="ایلام">ایلام</option>
+                                    <option value="لرستان">لرستان</option>
+                                    <option value="مرکزی">مرکزی</option>
+                                    <option value="چهارمحال و بختیاری">چهارمحال و بختیاری</option>
+                                    <option value="کرمانشاه">کرمانشاه</option>
+                                    <option value="همدان">همدان</option>
+                                    <option value="قزوین">قزوین</option>
+                                    <option value="گیلان">گیلان</option>
+                                    <option value="زنجان">زنجان</option>
+                                    <option value="سمنان">سمنان</option>
+                                    <option value="اصفهان">اصفهان</option>
+                                    <option value="کهگیلویه و بویر احمد">کهگیلویه و بویر احمد</option>
+                                    <option value="کردستان">کردستان</option>
+                                    <option value="آذربایجان غربی">آذربایجان غربی</option>
+                                    <option value="فارس">فارس</option>
+                                    <option value="بوشهر">بوشهر</option>
+                                    <option value="اردبیل">اردبیل</option>
+                                    <option value="مازندران">مازندران</option>
+                                    <option value="گلستان">گلستان</option>
+                                    <option value="خراسان رضوی">خراسان رضوی</option>
+                                    <option value="خراسان جنوبی">خراسان جنوبی</option>
+                                    <option value="سیستان و بلوچستان">سیستان و بلوچستان</option>
+                                    <option value="تهران">تهران</option>
+                                    <option value="قم">قم</option>
+                                    <option value="البرز">البرز</option>
+                                    <option value="آذربایجان شرقی">آذربایجان شرقی</option>
+                                    <option value="یزد">یزد</option>
+                                    <option value="هرمزگان">هرمزگان</option>
+                                    <option value="خوزستان">خوزستان</option>
+
+                                </select>
+                                <span asp-validation-for="Province" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group mb-lg-3 mb-md-3">
+                                <div class="control-label text-center d-inline-block w-lg-20 text-x6" style="border-right: 3px solid #0043ff;padding-bottom: 10px" for="City">شهر</div>
+                                <select asp-for="City" class="browser-default blue-gradient text-white custom-select w-lg-70 z-depth-1 text-Medium text-center text-x6 py-2 mr-2" id="CitySelect"></select>
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="form-group mb-lg-3 mb-md-3">
+                                <div class="control-label text-center d-inline-block w-lg-20 text-x6" style="border-right: 3px solid #0043ff;padding-bottom: 10px" for="DigitActivityGroup4">شهر</div>
+                                <select asp-for="DigitActivityGroup4" class="browser-default blue-gradient text-white custom-select w-lg-70 z-depth-1 text-Medium text-center text-x6 py-2 mr-2" id="DigitActivityGroup4">
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">برش ورنده كاري چوب(2010)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت كالاهاي بتوني-سيماني وگچي(2695)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت دستگاه هاو وسايل توزيع وكنترل نيروي برق(3120)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">پردازش داده(7230)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدات ازدانه هاي اسياب شده(1531)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت سايرمحصولات غذائي طبقه بندي نشده درجاي ديگر(1549)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليد محصولات خبازي(1541)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدانواع روغنهاي نباتي وحيواني(1514)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليد قندوشكر(1542)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدعمل اوري وحفاظت ازفسادگوشت ومحصولات گوشتي(1511)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">عمل اوري وحفاظت ازفسادميوه وسبزيجات نباتات(1513)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدغذاهاي اماده براي حيوانات(1533)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">صابون وپاك كننده هادترژانهافراورده هاي تميزكننده وپرداخت(2424)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">محصولات داروئي-موادشيميائي مورداستفاده درداروسازي ودارويي(2423)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">اماده سازي وريسندگي الياف نساجي بافندگي منسوجات(1711)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدانواع قالي وقاليچه(1722)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدسايرمنسوجات طبقه بندي نشده درجاي ديگر(1729)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت خميركاغذ-كاغذومقوا(2101)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت سايرمحصولات فلزي طبقه بندي نشده درجاي ديگر(2899)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت سايركالاهاي كاغذي ومقوايي(2109)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت كاغذومقواي كروگيت شده وظروف ومحفظه هاي كاغذي ومقوايي(2102)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت ورقهاي روكش -تخته مطبق -نئوپان وسايرانواع پانل وتخته(2021)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت سايرمحصولات كاني غيرفلزي طبقه بندي نشده درجاي ديگر(2699)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليد-سيمان-اهك -گچ(2694)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع رنگ-روغن جلاوپوششهاي مشابه-مركب چاپ وانواع بتونه(2422)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع محصولات پلاستيكي(2520)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">محصولات فلزي ساختماني(2811)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساير ماشين الات باكاربرد خاص(2929)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت ماشين ابزار(2922)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت قطعات وملحقات وسائل نقليه موتوري وموتورانها(3430)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ريخته گري فولادي واهن(2731)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت ماشين الات عمل اوري مواد غذايي -نوشابه وتوتون وتنباكو(2925)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت بدنه واجزاي بدنه وسائل نقليه موتوري(3420)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت ماشين الات كشاورزي وجنگل داري(2921)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع كوره ومشعلهاي كوره(2914)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">عمليات صنعتي كوتينگ فلزات-مهندسي مكانيك عمومي(2892)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت سايرمحصولات لاستيكي(2519)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع تانكر-مخزن وكانتينرهاي فلزي(2812)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع پمپ - كمپرسور-شير-سوپاپ(2912)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت ماشين الات معدني -استخراج -راه وساختمان(2924)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت وتعميرانواع كشتي وقايق باستثناءقايق تفريحي وورزشي(3511)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">تجهيزات بالابرنده وجابجاكننده(2915)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">عمل اوري وحفاظت ازفسادآبزيان ومحصولات حاصل ازآبزيان(1512)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت كالاها از مواد سراميكي غيرساختماني وغيرنسوز(2691)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت  فراورده هاي نفتي تصفيه شده(2320)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدنوشابه هاي غيرالكلي توليداب معدني(1554)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">موادشيميايي اساسي به جزانواع كودوتركيبات ازت(2411)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت اهن وفولاد اساسي(2710)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ريخته گري فلزات غيراهني فلزات رنگين(2732)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت الات برنده-ابزاردستي ويراق الات عمومي(2893)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت ماشين الات توليد منسوجات -البسه وچرم(2926)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">برش وشكل دادن وپرداخت سنگ(2696)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدمحصولات ازتوتون وتنباكو(1600)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">فورجينگ -پرسكاري -قالبزني -فورم دهي غلتكي فلزات - متالوژي پودر(2891)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت سايرمحصولات چوبي -انواع كالاازچوب پنبه -ني وموادحصيرباف(2029)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت موادپلاستيكي به شكل اوليه وساخت لاستيك مصنوعي(2413)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">بازيافت ضايعات وخرده هاي غيرفلزي(3720)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت تجهيزات پزشكي وجراحي ووسايل ارتوپدي(3311)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت سيم وكابل روكشدار(3130)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت لامپهاي الكتريكي وتجهيزات روشنائي(3150)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت كودهاوتركيبات ازته(2412)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت محصولات وسموم دفع افات وسايرموادشيميائي موردمصرف(2421)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت ساير ماشين الات باكاربردعام(2919)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت سايروسائل حمل ونقل طبقه بندي نشده درجاي ديگر(3599)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت فلزات اساسي قيمتي وفلزات غيراهني(2720)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت مبلمان(3610)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدكالاهاي نساجي تكميل شده باستثناي پوشاك(1721)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">چاپ(2221)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت محصولات سفالي وسراميكي ساختماني غيرنسوز(2693)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدانواع پارچه وكالاهاي كشباف وقلاب باف(1730)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت محصولات شيميايي طبقه بندي نشده درجاي ديگر(2429)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدطناب -ريسمان -نخ قندوتوري(1723)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت شيشه ومحصولات شيشه اي(2610)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت هواپيماوهلي كوپتر(3530)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت وسايل خانگي طبقه بندي نشده درجاي ديگر(2930)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">استخراج سنگ -شن وماسه وخاك رس(1410)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">فعاليت هاي بسته بندي(7495)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت مصنوعات نجاري وقفسه بندي ودروپنجره سازي ساختمان(2022)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدپوشاك-باستثناي پوشاك ازپوست خزدار(1810)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">انبار كردن و انبار داري(6302)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">فراورده هاي لبني(1520)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">استخراج وآگلومراسيون ذغالسنگ(1010)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع بلبرينگ -چرخ دنده-تجهيزات مكانيكي انتقال نيرو(2913)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت وسايل بازي واسباب بازي(3694)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليدكاكائوشكلات وانواع نقل وابنبات(1543)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">بازيافت ضايعات وخرده هاي فلزي(3710)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت وتعميرانواع قايقهاي تفريحي وورزشي(3512)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت مولدهاي بخاربجزديگهاي حرارت مركزي(2813)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">عمليات تكميلي منسوجاترنگرزي ـ چاپ ـ تكميل(1712)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">توليد الياف مصنوعي(2430)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ابزارهاووسايل ويژه اندازگيري بازبيني ازمايش دريانوردي ومقاصد(3312)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت فرستنده هاي تلويزيوني وراديوئي و دستگاههاي ارتباط تلفني(3220)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت ماشين هاي دفتري-حسابداري ومحاسباتي(3000)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع كفش(1920)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت سايرتجهيزات الكتريكي طبقه بندي نشده درجاي ديگر(3190)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت ظروف ومحفظه هاي چوبي(2023)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">موتورهاوتوربين هابجزموتورهاي هواپيماووسائل موتوري(2911)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع اكتروموتور-ژنراتوروترانسفورماتور(3110)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع لامپهاي الكترونيكي تيوپ و والو وسايراجزاءالكترون(3210)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت گيرنده هاي تلويزيون وراديو-دستگاههاي ضبط وپخش(3230)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع موتورسيكلت(3591)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت تجهيزات عمليات صنعتي(3313)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت وسائل نقليه موتوري(3410)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساخت انواع انبارهاكومولاتور - پيل وباطري(3140)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">تاسيسات بنا(4530)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">مشاوره  توليد نرم افزار(7220)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">سايرمصنوعات طبقه بندي نشده درجاي ديگر(3699)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">فعاليتهاي معماري ومهندسي ومشاوره فني درامورمربوطه(7421)</option>
+                                    <option value="ساخت محصولات ازمواد سراميكي نسوز(2692)">ساير فعاليتهاي كار كسب طبقه بندي نشده در جاي ديگر(7499)</option>
+                                </select>
+                                <span asp-validation-for="DigitActivityGroup4" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="form-group mb-lg-3 mb-md-3">
+                                <div class="control-label text-center d-inline-block w-lg-15 text-x6" style="border-right: 3px solid #0043ff;padding-bottom: 10px" for="Longitude">مختصات</div>
+                                <input asp-for="Longitude" class="form-control  text-right d-inline-block w-lg-35 text-x6" id="Longitude" readonly/>
+                                <input asp-for="Latitude" class="form-control  text-right d-inline-block w-lg-35 text-x6" id="Latitude" readonly />
+                                <span asp-validation-for="Longitude" class="text-danger"></span>
+                                <span asp-validation-for="Latitude" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-12">
+                            <button class="btn success-color btn-md btn-block waves-effect waves-light text-center p-2 w-100" type="submit" style="border:none;background-color:transparent;color:#fff;padding: 0.7rem 2rem;">
+                                <div class="d-flex justify-content-center">
+                                    <i class="fa fa-sign-in text-x8 ml-2" aria-hidden="true"></i>
+                                    <p class="m-0">ذخیره</p>
+                                </div>
+                            </button>
+                        </div>|
+                        <div class="col-lg-2 col-md-2 col-12">
+                            <button asp-controller="AdminPanel" asp-action="Main" class="btn info-color btn-md btn-block waves-effect waves-light text-center p-2 w-100" style="border:none;background-color:transparent;color:#fff;padding: 0.7rem 2rem;">
+                                <div class="d-flex justify-content-center">
+                                    <i class="fa fa-user-plus text-x8 ml-2" aria-hidden="true"></i>
+                                    <p class="m-0">انصراف</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var _lon = document.getElementById("Longitude").value;
+    var _lat = document.getElementById("Latitude").value;
+
+    MainClieint.LoadMap(_lon,_lat);
+    map.once('rendercomplete', function () {
+        loadjs('/OpenLayer/ShahrestanFull.js');
+        loadjs('/OpenLayer/TurfJs/Turf.js');
+        MainClieint.DragDropMarker(_lon, _lat);
+        document.getElementById("pageLOader").style.display = "none";
+        document.getElementById("map").style.display = "block";
+        MainClieint.CeartMessage("info", "کاربر گرامی", "برای تغییر موقعیت مکانی واحد صنعتی مارکر را بر روی نقشه جابهجا کنید");
+    });
+</script>
+
+@section Scripts {   
+    @{
+        
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+
+
+

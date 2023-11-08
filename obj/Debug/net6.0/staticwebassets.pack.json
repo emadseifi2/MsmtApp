@@ -1,0 +1,1581 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MsmtApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MsmtApp.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\LoadJS\\loadjs.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\LoadJS\\loadjs.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\LoadJS\\loadjs.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\LoadJS\\loadjs.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\LoadJS\\loadjs.umd.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\LoadJS\\loadjs.umd.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\OsmToGeo\\osmtogeojson.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\OsmToGeo\\osmtogeojson.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSans(FaNum)_Medium.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSans(FaNum)_Medium.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSans.html",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSans.html"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum).eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum).eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum).ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum).ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum).woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum).woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum).woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum).woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Bold.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Bold.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Bold.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Bold.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Bold.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Bold.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Bold.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Bold.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Light.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Light.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Light.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Light.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Light.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Light.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Light.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Light.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Medium.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Medium.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Medium.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Medium.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Medium.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Medium.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Medium.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_Medium.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\PersianFont\\PersianFontStyle.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\PersianFont\\PersianFontStyle.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\Toastr\\toastr.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\Toastr\\toastr.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\Toastr\\toastr.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\Toastr\\toastr.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\Toastr\\toastr.min.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\Toastr\\toastr.min.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\Toastr\\toastr.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\Toastr\\toastr.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\TurfJs\\Turf.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\TurfJs\\Turf.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\CHANGELOG.md",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\CHANGELOG.md"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\LICENSE",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\LICENSE-3RD-PARTY.md",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\LICENSE-3RD-PARTY.md"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\README.md",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\README.md"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\charts.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\charts.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\charts.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\charts.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\core.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\core.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\core.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\core.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\maps.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\maps.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\maps.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\maps.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\annotation.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\annotation.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\annotation.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\annotation.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\bullets.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\bullets.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\bullets.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\bullets.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\forceDirected.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\forceDirected.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\forceDirected.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\forceDirected.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\overlapBuster.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\overlapBuster.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\overlapBuster.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\overlapBuster.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\rangeSelector.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\rangeSelector.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\rangeSelector.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\rangeSelector.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\regression.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\regression.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\regression.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\regression.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\sliceGrouper.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\sliceGrouper.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\sliceGrouper.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\sliceGrouper.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\sunburst.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\sunburst.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\sunburst.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\sunburst.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\timeline.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\timeline.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\timeline.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\timeline.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\venn.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\venn.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\venn.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\venn.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\wordCloud.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\wordCloud.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\plugins\\wordCloud.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\plugins\\wordCloud.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\amcharts.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\amcharts.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\amcharts.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\amcharts.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\amchartsdark.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\amchartsdark.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\amchartsdark.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\amchartsdark.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\animated.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\animated.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\animated.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\animated.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\dark.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\dark.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\dark.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\dark.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\dataviz.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\dataviz.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\dataviz.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\dataviz.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\frozen.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\frozen.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\frozen.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\frozen.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\kelly.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\kelly.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\kelly.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\kelly.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\material.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\material.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\material.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\material.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\microchart.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\microchart.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\microchart.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\microchart.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\moonrisekingdom.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\moonrisekingdom.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\moonrisekingdom.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\moonrisekingdom.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\patterns.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\patterns.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\patterns.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\patterns.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\spiritedaway.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\spiritedaway.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\amcharts4\\themes\\spiritedaway.js.map",
+      "PackagePath": "staticwebassets\\AdminPanel\\amcharts4\\themes\\spiritedaway.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\animate.css\\css\\animate.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\animate.css\\css\\animate.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\chartist\\chartist.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\chartist\\chartist.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\component.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\component.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\font-awesome-n.min.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\font-awesome-n.min.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\ionicons.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\ionicons.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\jquery.mCustomScrollbar.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\jquery.mCustomScrollbar.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\linearicons.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\linearicons.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\morris.js\\css\\morris.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\morris.js\\css\\morris.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\simple-line-icons.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\simple-line-icons.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\style.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\style.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\css\\style.min.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\CAW.TTF",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\CAW.TTF"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\FontAwesome.otf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Linearicons-Free.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Linearicons-Free.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Linearicons-Free.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Linearicons-Free.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Linearicons-Free.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Linearicons-Free.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Linearicons-Free.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Linearicons-Free.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Linearicons-Free.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Linearicons-Free.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\SEGOEUI.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\SEGOEUI.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\SEGOEUIB.TTF",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\SEGOEUIB.TTF"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\SEGOEUIZ.TTF",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\SEGOEUIZ.TTF"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Simple-Line-Icons.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Simple-Line-Icons.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Simple-Line-Icons.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Simple-Line-Icons.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Simple-Line-Icons.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Simple-Line-Icons.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Simple-Line-Icons.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Simple-Line-Icons.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\Simple-Line-Icons.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\Simple-Line-Icons.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-brands-400.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-brands-400.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-brands-400.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-regular-400.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-regular-400.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-regular-400.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-solid-900.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-solid-900.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-solid-900.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\feather\\css\\feather.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\feather\\css\\feather.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\feather\\fonts\\feather.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\feather\\fonts\\feather.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\feather\\fonts\\feather.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\feather\\fonts\\feather.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\feather\\fonts\\feather.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\feather\\fonts\\feather.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\feather\\fonts\\feather.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\feather\\fonts\\feather.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\font-awesome\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\font-awesome\\css\\font-awesome.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\font-awesome\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\font-awesome\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\font-awesome\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\font-awesome\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\icofont\\css\\icofont.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\icofont\\css\\icofont.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\icofont\\fonts\\icofont.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\icofont\\fonts\\icofont.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\icofont\\fonts\\icofont.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\icofont\\fonts\\icofont.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\icofont\\fonts\\icofont.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\icofont\\fonts\\icofont.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\ionicons.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\ionicons.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\ionicons.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\ionicons.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\ionicons.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\ionicons.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\ionicons.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\ionicons.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\logo.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\logo.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\segoeuii.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\segoeuii.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\themify-icons\\fonts\\themify.eot",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\themify-icons\\fonts\\themify.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\themify-icons\\fonts\\themify.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\themify-icons\\fonts\\themify.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\themify-icons\\fonts\\themify.ttf",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\themify-icons\\fonts\\themify.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\themify-icons\\fonts\\themify.woff",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\themify-icons\\fonts\\themify.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\icon\\themify-icons\\themify-icons.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\icon\\themify-icons\\themify-icons.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\3231279.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\3231279.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\Icon.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\Icon.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\Operation.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\Operation.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\Operation_Add.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\Operation_Add.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\Operation_delete.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\Operation_delete.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\Portfolio-update.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\Portfolio-update.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\Thumbs.db",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\Thumbs.db"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\UnderConstruction.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\UnderConstruction.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\bg-modal2.jpg",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\bg-modal2.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\bg-modal7.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\bg-modal7.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\breadcrumb-bg.jpg",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\breadcrumb-bg.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\detalis.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\detalis.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\logo.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\logo.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\markerA.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\markerA.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\markerB.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\markerB.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\modalbg.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\modalbg.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\pm-3.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\pm-3.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\select-arrow.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\select-arrow.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\user-bg.jpg",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\user-bg.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\images\\user.png",
+      "PackagePath": "staticwebassets\\AdminPanel\\images\\user.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\AdminPanel.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\AdminPanel.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\Exel.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\Exel.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\MainClieint.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\MainClieint.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\ProvinceAndCityName.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\ProvinceAndCityName.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\ProvinceIran.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\ProvinceIran.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\ShahrestanFull.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\ShahrestanFull.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\SmoothScroll.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\SmoothScroll.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\animation.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\animation.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\bootstrap-growl.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\bootstrap-growl.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\classie.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\classie.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\color-json-common-page.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\color-json-common-page.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\common-pages.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\common-pages.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\common-pages.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\common-pages.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\counter.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\counter.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\float\\curvedLines.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\float\\curvedLines.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\float\\jquery.flot.categories.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\float\\jquery.flot.categories.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\float\\jquery.flot.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\float\\jquery.flot.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\float\\jquery.flot.pie.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\float\\jquery.flot.pie.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\float\\jquery.flot.tooltip.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\float\\jquery.flot.tooltip.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\jquery-slimscroll\\jquery.slimscroll.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\jquery-slimscroll\\jquery.slimscroll.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\jquery-ui\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\jquery-ui\\jquery-ui.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\jquery.easypiechart.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\jquery.easypiechart.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\jquery.mCustomScrollbar.concat.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\jquery.mCustomScrollbar.concat.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\jquery.mousewheel.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\jquery.mousewheel.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\jquery.quicksearch.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\jquery.quicksearch.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\modal.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\modal.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\modalEffects.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\modalEffects.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\modernizr\\css-scrollbars.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\modernizr\\css-scrollbars.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\modernizr\\modernizr.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\modernizr\\modernizr.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\morris.js\\morris.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\morris.js\\morris.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\owl-custom.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\owl-custom.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\pcoded.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\pcoded.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\popper.js\\popper.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\popper.js\\popper.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\raphael\\raphael.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\raphael\\raphael.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\rating.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\rating.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\script.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\script.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\script.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\script.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\swiper-custom.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\swiper-custom.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\testOsm.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\testOsm.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\horizontal-layout.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\horizontal-layout.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\menu\\box-layout.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\menu\\box-layout.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\menu\\menu-compact.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\menu\\menu-compact.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\menu\\menu-header-fixed.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\menu\\menu-header-fixed.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\menu\\menu-hori-fixed.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\menu\\menu-hori-fixed.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\menu\\menu-rtl.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\menu\\menu-rtl.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\menu\\menu-sidebar-fixed.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\menu\\menu-sidebar-fixed.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\menu\\menu-static.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\menu\\menu-static.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\vertical-layout.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\vertical-layout.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\js\\vertical\\vertical-layout.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\js\\vertical\\vertical-layout.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\moment\\moment.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\moment\\moment.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\accordion\\accordion.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\accordion\\accordion.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\accordion\\accordion.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\accordion\\accordion.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\chart\\morris\\morris-custom-chart.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\chart\\morris\\morris-custom-chart.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\amchart\\css\\amchart.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\amchart\\css\\amchart.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\amchart\\css\\export.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\amchart\\css\\export.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\amchart\\js\\amcharts.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\amchart\\js\\amcharts.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\amchart\\js\\custom-amchart.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\amchart\\js\\custom-amchart.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\amchart\\js\\export.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\amchart\\js\\export.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBig.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBig.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBigH.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBigH.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\amchart\\js\\light.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\amchart\\js\\light.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\amchart\\js\\serial.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\amchart\\js\\serial.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\custom-dashboard.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\custom-dashboard.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\dashboard\\custom-dashboard.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\dashboard\\custom-dashboard.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\google-maps\\gmaps.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\google-maps\\gmaps.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\google-maps\\google-maps.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\google-maps\\google-maps.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\icon-modal.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\icon-modal.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\notification\\notification.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\notification\\notification.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\notification\\notification.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\notification\\notification.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\todo\\todo.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\todo\\todo.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\waves\\css\\waves.min.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\waves\\css\\waves.min.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\waves\\js\\waves.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\waves\\js\\waves.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\amcharts.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\amcharts.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\amcharts.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\amcharts.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\ammap.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\ammap.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\ammap.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\ammap.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\continentsLow.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\continentsLow.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\continentsLow.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\continentsLow.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\export.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\export.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\gauge.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\gauge.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\gauge.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\gauge.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\images\\dragIconRoundBig.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\images\\dragIconRoundBig.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\images\\lens.svg",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\images\\lens.svg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\light.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\light.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\light.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\light.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\pie.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\pie.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\pie.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\pie.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\serial.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\serial.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\serial.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\serial.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\usaLow.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\usaLow.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\worldLow.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\worldLow.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\amchart\\worldLow.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\amchart\\worldLow.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\pages\\widget\\excanvas.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\pages\\widget\\excanvas.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\paginationjs-master\\pagination.css",
+      "PackagePath": "staticwebassets\\AdminPanel\\paginationjs-master\\pagination.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\paginationjs-master\\pagination.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\paginationjs-master\\pagination.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\paginationjs-master\\pagination.less",
+      "PackagePath": "staticwebassets\\AdminPanel\\paginationjs-master\\pagination.less"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\AdminPanel\\paginationjs-master\\pagination.min.js",
+      "PackagePath": "staticwebassets\\AdminPanel\\paginationjs-master\\pagination.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\CSharpCode.cs",
+      "PackagePath": "staticwebassets\\DevelopCode\\CSharpCode.cs"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\ClasterOpenlayer.js",
+      "PackagePath": "staticwebassets\\DevelopCode\\ClasterOpenlayer.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\DB_IndustrialUnit.xls",
+      "PackagePath": "staticwebassets\\DevelopCode\\DB_IndustrialUnit.xls"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\FullDate.xls",
+      "PackagePath": "staticwebassets\\DevelopCode\\FullDate.xls"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\LinstringAdd.js",
+      "PackagePath": "staticwebassets\\DevelopCode\\LinstringAdd.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\Mapbox.js",
+      "PackagePath": "staticwebassets\\DevelopCode\\Mapbox.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\NetTopologySuite.cs",
+      "PackagePath": "staticwebassets\\DevelopCode\\NetTopologySuite.cs"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\OpenLayer.js",
+      "PackagePath": "staticwebassets\\DevelopCode\\OpenLayer.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\Operations.js",
+      "PackagePath": "staticwebassets\\DevelopCode\\Operations.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\ServerPelesk.txt",
+      "PackagePath": "staticwebassets\\DevelopCode\\ServerPelesk.txt"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\Sql server cod.js",
+      "PackagePath": "staticwebassets\\DevelopCode\\Sql server cod.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\VIsibleLayer.js",
+      "PackagePath": "staticwebassets\\DevelopCode\\VIsibleLayer.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\DevelopCode\\test.js",
+      "PackagePath": "staticwebassets\\DevelopCode\\test.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\Document\\DB_FourDigitActivityGroup.xls",
+      "PackagePath": "staticwebassets\\Document\\DB_FourDigitActivityGroup.xls"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\Document\\DB_IndustrialUnit.xls",
+      "PackagePath": "staticwebassets\\Document\\DB_IndustrialUnit.xls"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\Document\\DB_IndustryGroup.xls",
+      "PackagePath": "staticwebassets\\Document\\DB_IndustryGroup.xls"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\Document\\MSMT.pdf",
+      "PackagePath": "staticwebassets\\Document\\MSMT.pdf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\Document\\Microsoft.NETCore6 in Vscod.txt",
+      "PackagePath": "staticwebassets\\Document\\Microsoft.NETCore6 in Vscod.txt"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\Document\\OSM_ID Query.txt",
+      "PackagePath": "staticwebassets\\Document\\OSM_ID Query.txt"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\Document\\Primary.ascx",
+      "PackagePath": "staticwebassets\\Document\\Primary.ascx"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\Document\\a1.PNG",
+      "PackagePath": "staticwebassets\\Document\\a1.PNG"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\Document\\a2.PNG",
+      "PackagePath": "staticwebassets\\Document\\a2.PNG"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\County.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\County.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\LoadJS\\loadjs.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\LoadJS\\loadjs.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\LoadJS\\loadjs.min.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\LoadJS\\loadjs.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\LoadJS\\loadjs.umd.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\LoadJS\\loadjs.umd.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\MangeProvince\\AddCordinate.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\MangeProvince\\AddCordinate.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\MangeProvince\\AddCounty_JsonToSql.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\MangeProvince\\AddCounty_JsonToSql.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\MangeProvince\\AddProvince_JsonToSql.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\MangeProvince\\AddProvince_JsonToSql.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\MangeProvince\\FindCounty_JsonToSql.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\MangeProvince\\FindCounty_JsonToSql.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\MangeProvince\\creatJsonProvince.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\MangeProvince\\creatJsonProvince.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\MangeProvince\\exelprovincetoSql.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\MangeProvince\\exelprovincetoSql.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\MangeProvince\\fullProvince.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\MangeProvince\\fullProvince.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL.css",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\BingMapsSatellite.jpg",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\BingMapsSatellite.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\Icon.png",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\Icon.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\Mapbox.jpg",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\Mapbox.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\OLBG.png",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\OLBG.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\OpenTopoMap.jpg",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\OpenTopoMap.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\Osm.png",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\Osm.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\PaternMap.jpg",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\PaternMap.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\RemoveLayer.png",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\RemoveLayer.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\Watercolor.jpg",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\Watercolor.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\bg-modal7.png",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\bg-modal7.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\bg.jpg",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\bg.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\logo.png",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\logo.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\markerA.png",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\markerA.png"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OL_Images\\osm.jpg",
+      "PackagePath": "staticwebassets\\OpenLayer\\OL_Images\\osm.jpg"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OpenLayerV5.3.0\\ol.css",
+      "PackagePath": "staticwebassets\\OpenLayer\\OpenLayerV5.3.0\\ol.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OpenLayerV5.3.0\\ol.css.map",
+      "PackagePath": "staticwebassets\\OpenLayer\\OpenLayerV5.3.0\\ol.css.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OpenLayerV5.3.0\\ol.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\OpenLayerV5.3.0\\ol.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OpenLayerV5.3.0\\ol.js.map",
+      "PackagePath": "staticwebassets\\OpenLayer\\OpenLayerV5.3.0\\ol.js.map"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\OsmToGeo\\osmtogeojson.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\OsmToGeo\\osmtogeojson.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSans(FaNum)_Medium.eot",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSans(FaNum)_Medium.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSans.html",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSans.html"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum).eot",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum).eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum).ttf",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum).ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum).woff",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum).woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum).woff2",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum).woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Bold.eot",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Bold.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Bold.ttf",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Bold.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Bold.woff",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Bold.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Bold.woff2",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Bold.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Light.eot",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Light.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Light.ttf",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Light.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Light.woff",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Light.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Light.woff2",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Light.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Medium.eot",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Medium.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Medium.ttf",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Medium.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Medium.woff",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Medium.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Medium.woff2",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_Medium.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.eot",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.eot"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.ttf"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.woff",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.woff"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\IRANSansWeb(FaNum)_UltraLight.woff2"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\PersianFont\\PersianFontStyle.css",
+      "PackagePath": "staticwebassets\\OpenLayer\\PersianFont\\PersianFontStyle.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\Province.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\Province.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ProvinceAndCityName.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ProvinceAndCityName.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ProvinceIran.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ProvinceIran.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ShahrestanFull.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ShahrestanFull.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\TinyColor-master\\build.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\TinyColor-master\\build.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\TinyColor-master\\dist\\tinycolor-min.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\TinyColor-master\\dist\\tinycolor-min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\TinyColor-master\\mod.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\TinyColor-master\\mod.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\TinyColor-master\\tinycolor.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\TinyColor-master\\tinycolor.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\Toastr\\toastr.css",
+      "PackagePath": "staticwebassets\\OpenLayer\\Toastr\\toastr.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\Toastr\\toastr.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\Toastr\\toastr.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\Toastr\\toastr.min.css",
+      "PackagePath": "staticwebassets\\OpenLayer\\Toastr\\toastr.min.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\Toastr\\toastr.min.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\Toastr\\toastr.min.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\TurfJs\\Turf.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\TurfJs\\Turf.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\moment\\moment.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\moment\\moment.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\Cloud.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\Cloud.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\Exif2Geojson.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\Exif2Geojson.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\ExportMap.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\ExportMap.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\FontAwesome5Def.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\FontAwesome5Def.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\FontAwesomeDef.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\FontAwesomeDef.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\FontMaki2Def.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\FontMaki2Def.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\FontMakiDef.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\FontMakiDef.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\IFrameAPI.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\IFrameAPI.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\MapIFrameAPI.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\MapIFrameAPI.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\TextureImage.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\TextureImage.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\extra\\WSynchro.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\extra\\WSynchro.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\ol-ext.css",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\ol-ext.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\ol-ext.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\ol-ext.js"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\ol-ext.min.css",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\ol-ext.min.css"
+    },
+    {
+      "Id": "E:\\WebDevelopment\\Project\\net.Core\\MsmtApp\\wwwroot\\OpenLayer\\ol-ext\\dist\\ol-ext.min.js",
+      "PackagePath": "staticwebassets\\OpenLayer\\ol-ext\\dist\\ol-ext.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.MsmtApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.MsmtApp.props",
+      "PackagePath": "build\\MsmtApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.MsmtApp.props",
+      "PackagePath": "buildMultiTargeting\\MsmtApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.MsmtApp.props",
+      "PackagePath": "buildTransitive\\MsmtApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

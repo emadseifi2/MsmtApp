@@ -1,0 +1,850 @@
+﻿@model List<MapInfoViewModel>
+
+@{
+    ViewData["Title"] = "اطلاعات مکانی";
+    Layout = "~/Views/Shared/_LayoutOL.cshtml";
+}
+
+<div class="pageLOader" id="pageLOader">
+    <div id="loader">
+        <div id="shadow"></div>
+        <div id="box"></div>
+    </div>
+    <p class="text-center text-Bold text-x10 text-white m-0" style="padding-top: 80vh;">
+        لطفا چند لحظه صبر نمایید...
+    </p>
+    <h6 class="text-center text-Medium text-x7 text-white mt-3" id="internet" style="display:none">
+        این سامانه نیاز به
+        اینترنت دارد.از اتصال خود به اینترنت مطمئن شوید
+    </h6>
+</div>
+
+<div id="map">
+    <div class="circle_all" id="loaderOSM" style="display:none">
+        <div class="circle_A">
+            <i class="fas fa-map-marker-alt animated slideInDown text-x20 blue-text infinite"
+                style="position: absolute;left: 0;right: 0;margin: 0 auto;top: 35%"></i>
+            <div class="pulseLoader"></div>
+        </div>
+        <div class="circle_B"></div>
+        <div class="circle_C"></div>
+        <div class="circle_D"></div>
+        <div class="circle_E"></div>
+    </div>
+    <div id="OL_Id_Sidbare" class="OL_Cl_Sidbare" style="right:-305px">
+        <div id="OL_Id_PanelBar" class="OL_Cl_PanelBar">
+            <div class="accordion md-accordion accordion-9" id="accordionSidebar" role="tablist"
+                aria-multiselectable="true">
+
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <div class="accordion" id="accordionExample">
+                        @* محدوده فعالیت *@
+                        <div class="card z-depth-0 bordered" style="background-color: #ebe1cf !important">
+                            <div class="card-header p-0" id="headingA">
+                                <button
+                                    class="btn purple-gradient white-text m-0 py-1 pr-3 text-Medium text-right text-x7 w-100 waves-effect waves-light collapsed"
+                                    type="button" data-toggle="collapse" data-target="#collapseA" aria-expanded="true"
+                                    aria-controls="collapseA" style="border-radius: 0;">
+                                    <i class="fa fa-map fa-2x text-x10 float-right white-text pl-1" aria-hidden="true"></i>
+                                    <span class="mt-2">
+                                        محدوده فعالیت
+                                    </span>
+                                </button>
+                            </div>
+                            <div id="collapseA" class="collapse" aria-labelledby="headingA" data-parent="#accordionExample">
+                                <div class="card-body p-1 text-center amber lighten-4">
+                                    <h1 class="text-center w-100 text-Bold text-x6 text-dark">
+                                        انتخاب استان
+                                    </h1>
+                                    <select
+                                        class="browser-default custom-select w-75 z-depth-1 text-Medium text-center text-x6"
+                                        id="FilterPartA" onchange="OL.OnChangeProvin()" style="height: calc(1.4rem + 2px)">
+                                        <option class="text-Medium text-center text-x6" id="NotSelectProvine" selected="">
+                                            ...انتخاب نمایید
+                                        </option>
+                                        @foreach (var item in Model)
+                                        {
+                                            <option class="text-Medium text-center text-x6" value="@item.ProvinceAreaId" data-id="@item.ProvinceId">
+                                                @item.ProvinceName
+                                            </option>                                          
+                                        }
+                                    </select>
+                                    <div id="city" style="display:none">
+                                        <hr />
+                                        <h1 class="text-center w-100 text-Bold text-x6 text-dark">
+                                            انتخاب شهر
+                                        </h1>
+                                        <div id="AllRegion">
+                                            <ul class="m-0 p-0 text-center" id="AllCity"></ul>
+                                            <ul class="m-0 p-0 text-center" id="AllProvince"></ul>
+                                        </div>
+                                    </div>
+                                                                      
+                                </div>
+                            </div>
+                        </div>
+
+                        @* انتخاب گروه صنعتی *@
+                        <div class="card z-depth-0 bordered">
+                            <div class="card-header p-0" id="headingB">
+                                <button
+                                    class="btn purple-gradient white-text m-0 py-1 pr-3 text-Medium text-right text-x7 w-100 waves-effect waves-light collapsed"
+                                    type="button" data-toggle="collapse" data-target="#collapseB" aria-expanded="false"
+                                    aria-controls="collapseB">
+                                    <i class="fa fa-pie-chart fa-2x text-x10 float-right white-text pl-1"
+                                        aria-hidden="true"></i>
+                                    <span class="mt-2">
+                                        انتخاب گروه صنعتی
+                                    </span>
+                                </button>
+                            </div>
+                            <div id="collapseB" class="collapse orange lighten-5" aria-labelledby="headingB"
+                                data-parent="#accordionExample">
+
+                                <div class="card-body white-text b-t p-0 z-depth-0">
+                                    <div style="max-height: 500px;overflow-y: scroll;overflow-x: hidden">
+                                        <div class="mx-0 my-0 py-0 pt-1 pr-0 w-100 mx-auto text-right"
+                                            style="direction: rtl;float: right" id="AllGroupBox"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @* ابزار تحلیل و پردازش *@
+                        <div class="card z-depth-0 bordered">
+                            <div class="card-header p-0" id="headingC">
+                                <button
+                                    class="btn purple-gradient white-text m-0 py-1 pr-3 text-Medium text-right text-x7 w-100 waves-effect waves-light collapsed"
+                                    type="button" data-toggle="collapse" data-target="#collapseC" aria-expanded="false"
+                                    aria-controls="collapseC">
+                                    <i class="fa fa-line-chart fa-2x text-x10 float-right white-text pl-1"
+                                        aria-hidden="true"></i>
+                                    <span class="mt-2">
+                                        ابزار تحلیل و پردازش
+                                    </span>
+                                </button>
+                            </div>
+                            <div id="collapseC" class="collapse" aria-labelledby="headingC" data-parent="#accordionExample">
+                                <div class="card-body p-1 text-center amber lighten-4">
+                                    <div class="accordion" id="accordionterafic">
+                                        @* شعاع عملکردی واحد های صنعتی *@
+                                        <div class="card z-depth-0 bordered">
+                                            <div class="card-header p-0" id="headingTB">
+                                                <button
+                                                    class="btn peach-gradient white-text m-0 py-1 text-Medium text-right text-x6 w-100 waves-effect waves-light collapsed"
+                                                    type="button" data-toggle="collapse" data-target="#collapseTB"
+                                                    aria-expanded="false" aria-controls="collapseTB">
+                                                    <i class="fa fa-minus fa-2x text-x7 float-right white-text"
+                                                        aria-hidden="true"></i>
+                                                    <span class="pr-2">
+                                                        شعاع عملکردی واحد های صنعتی
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div id="collapseTB" class="collapse" aria-labelledby="headingTB"
+                                                data-parent="#accordionterafic">
+                                                <div class="card-body p-1">
+                                                    <div class="range">
+                                                        <p class="text-Bold text-x7 text-dark text-center mt-3 mb-1">
+                                                            محدوده شعاع عملکردی هر واحد صنعتی
+                                                        </p>
+                                                        <input class="d-inline-block ml-1 w-80" type="range" min="500"
+                                                            max="10000" value="500" step="500" id="range-input"
+                                                            oninput="updateVal(this.value)" />
+                                                        <div>
+                                                            <span id="range-value"
+                                                                class="text-Medium text-x6 text-dark text-center mx-1">
+                                                                500
+                                                            </span>
+                                                            <span class="text-Medium text-x6 text-dark text-center">
+                                                                متر
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div id="BtnSearchUnit">
+                                                        <hr />
+                                                        <a id="CollectionQuery"
+                                                            class="btn btn-info px-0 mx-0 my-1 py-1 w-50 text-Medium text-x6 btn-md waves-effect">
+                                                            پراکندگی واحد های صنفی
+                                                        </a>
+                                                    </div>
+                                                    <div class="loadIndustryUnit"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @* کلاستر واحد های صنعتی *@
+                                        <div class="card z-depth-0 bordered">
+                                            <div class="card-header p-0" id="headingTC">
+                                                <button
+                                                    class="btn peach-gradient white-text m-0 py-1 text-Medium text-right text-x6 w-100 waves-effect waves-light collapsed"
+                                                    type="button" data-toggle="collapse" data-target="#collapseTC"
+                                                    aria-expanded="false" aria-controls="collapseTC">
+                                                    <i class="fa fa-minus fa-2x text-x7 float-right white-text"
+                                                        aria-hidden="true"></i>
+                                                    <span class="pr-2">
+                                                        کلاستر واحد های صنعتی
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div id="collapseTC" class="collapse" aria-labelledby="headingTC"
+                                                data-parent="#accordionterafic">
+                                                <div class="card-body p-1">
+                                                    <h1 class="text-right w-100 text-Bold text-x6 text-dark">
+                                                        لورم ایپسوم
+                                                    </h1>
+                                                    <hr />
+                                                    <div class="options">
+                                                        <h2>
+                                                            Cluster options:
+                                                        </h2>
+                                                        <input id="animatecluster" type="checkbox" checked="checked"
+                                                            onchange="clusterLayer.set('animationDuration',(this.checked ? 700:0));" />
+                                                        <label for="animatecluster">animate cluster</label>
+                                                        <br />
+                                                        Number of features:
+                                                        <br />
+                                                        <input type="number" value="2000"
+                                                            onchange="addFeatures(this.value);" />
+                                                        <h2>Select options:</h2>
+                                                        <input id="animatesel" type="checkbox" checked="checked"
+                                                            onchange="selectCluster.animate = this.checked" />
+                                                        <label for="animatesel">animate selection</label>
+                                                    </div>
+                                                    <div class="infos">
+                                                        <!-- preload icon -->
+                                                        <i class="fa maki-bus" title="building"></i>
+                                                        <i class="fa maki-town_hall" title="building"></i>
+                                                        <i class="fa maki-theatre" title="building"></i>
+                                                        <i class="fa maki-industrial" title="building"></i>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @* نزدیکترین ها *@
+                                        <div class="card z-depth-0 bordered">
+                                            <div class="card-header p-0" id="headingTD">
+                                                <button
+                                                    class="btn peach-gradient white-text m-0 py-1 text-Medium text-right text-x6 w-100 waves-effect waves-light collapsed"
+                                                    type="button" data-toggle="collapse" data-target="#collapseTD"
+                                                    aria-expanded="false" aria-controls="collapseTD">
+                                                    <i class="fa fa-minus fa-2x text-x7 float-right white-text"
+                                                        aria-hidden="true"></i>
+                                                    <span class="pr-2">
+                                                        نزدیکترین ها
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div id="collapseTD" class="collapse" aria-labelledby="headingTD"
+                                                data-parent="#accordionterafic">
+                                                <div class="card-body p-1">
+                                                    <h1 class="text-justify w-100 text-Medium text-x6 p-1 text-dark">
+                                                        با کلیک بر روی دکمه زیر یک مارکر بر روی نقشه اضافه می شود و با
+                                                        استفاده از آن یک مکان خاص را انتخاب نمایید تا با توجه به شعاع
+                                                        انتخابی خود نزدیکترین واحد های صنعتی به مکان مورد نظر را نمایش دهد
+                                                    </h1>
+                                                    <p class="text-Bold text-x7 text-dark text-center mt-3 mb-1">
+                                                        شعاع محدوده جستجو
+                                                    </p>
+                                                    <input class="d-inline-block ml-1 w-80" type="range" min="500"
+                                                        max="5000" value="500" step="500" id="RangeCloset"
+                                                        oninput="updateRangeClosetVal(this.value)" />
+                                                    <div>
+                                                        <span id="RangeCloset-value"
+                                                            class="text-Medium text-x6 text-dark text-center mx-1">
+                                                            500
+                                                        </span>
+                                                        <span class="text-Medium text-x6 text-dark text-center">
+                                                            متر
+                                                        </span>
+                                                    </div>
+
+                                                    <hr />
+                                                    <a id="IUnitCloset"
+                                                        class="btn btn-info px-0 mx-0 my-1 py-1 w-50 text-Medium text-x6 btn-md waves-effect">
+                                                        نزدیکترین واحد ها
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @* پراکندگی جمعیت *@
+                                        <div class="card z-depth-0 bordered">
+                                            <div class="card-header p-0" id="headingTE">
+                                                <button
+                                                    class="btn peach-gradient white-text m-0 py-1 text-Medium text-right text-x6 w-100 waves-effect waves-light collapsed"
+                                                    type="button" data-toggle="collapse" data-target="#collapseTE"
+                                                    aria-expanded="false" aria-controls="collapseTE">
+                                                    <i class="fa fa-minus fa-2x text-x7 float-right white-text"
+                                                        aria-hidden="true"></i>
+                                                    <span class="pr-2">
+                                                        پراکندگی جمعیت
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div id="collapseTE" class="collapse" aria-labelledby="headingTE"
+                                                data-parent="#accordionterafic">
+                                                <div class="card-body p-1">
+                                                    <h1 class="text-right w-100 text-Bold text-x6 text-dark">
+                                                        لورم ایپسوم
+                                                    </h1>
+                                                    <hr />
+                                                    <p class="text-justify w-100 text-Medium text-x6 text-dark">لورم ایپسوم
+                                                        متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+                                                        طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                                                        سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+                                                        کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @* معابر شهری *@
+                                        <div class="card z-depth-0 bordered">
+                                            <div class="card-header p-0" id="headingTF">
+                                                <button
+                                                    class="btn peach-gradient white-text m-0 py-1 text-Medium text-right text-x6 w-100 waves-effect waves-light collapsed"
+                                                    type="button" data-toggle="collapse" data-target="#collapseTF"
+                                                    aria-expanded="false" aria-controls="collapseTF">
+                                                    <i class="fa fa-minus fa-2x text-x7 float-right white-text"
+                                                        aria-hidden="true"></i>
+                                                    <span class="pr-2">
+                                                        شبکه معابر
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div id="collapseTF" class="collapse" aria-labelledby="headingTF"
+                                                data-parent="#accordionterafic">
+                                                <div class="card-body p-1">
+                                                    <h1 class="text-center w-100 text-Bold text-x6 text-dark">
+                                                        انتخاب شهر
+                                                    </h1>
+                                                    <select
+                                                        class="browser-default custom-select w-75 z-depth-1 text-Medium text-center text-x6"
+                                                        id="ُSelectPathways" onchange="OL.OnChangePathways()"
+                                                        style="height: calc(1.4rem + 2px)"></select>
+                                                    <div id="cityPathways" style="display:none">
+                                                        <hr />
+                                                        <h1 class="text-center w-100 text-Bold text-x6 text-dark">
+                                                            انتخاب شهر
+                                                        </h1>
+                                                        <select
+                                                            class="browser-default custom-select w-75 z-depth-1 text-Medium text-center text-x6"
+                                                            id="SelectCityPathways"
+                                                            style="height: calc(1.4rem + 2px)"></select>
+                                                    </div>
+
+                                                    <div class="Viewcontainer" id=ViewcontainerPathways>
+                                                        <ul class="m-0 pt-2 pb-3 pr-3 w-100 mx-auto text-right"
+                                                            style="direction: rtl;float: right">
+                                                            <li style="border-color:#373b8d"
+                                                                class="d-inline-block mt-1 pt-1 pr-1 ml-2 liCheckBox">
+                                                                <div
+                                                                    class="custom-control custom-checkbox outline-info px-0 py-0 rounded">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        data-pathways="motorway" data-color="#373b8d"
+                                                                        data-widthStroke=5 id="Pathways_A">
+                                                                    <label
+                                                                        class="custom-control-label text-Medium text-dark m-0 pr-2"
+                                                                        style="font-size: 10px" for="Pathways_A">
+                                                                        آزادراهها
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+
+                                                            <li style="border-color:#217a21"
+                                                                class="d-inline-block mt-1 pt-1 pr-1 ml-2 liCheckBox">
+                                                                <div
+                                                                    class="custom-control custom-checkbox outline-info px-0 py-0 rounded">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        data-pathways="trunk" data-color="#217a21"
+                                                                        data-widthStroke=4 id="Pathways_B">
+                                                                    <label
+                                                                        class="custom-control-label text-Medium text-dark m-0 pr-2"
+                                                                        style="font-size: 10px" for="Pathways_B">
+                                                                        جاده های بین شهری
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+
+                                                            <li style="border-color:#c6255f"
+                                                                class="d-inline-block mt-1 pt-1 pr-1 ml-2 liCheckBox">
+                                                                <div
+                                                                    class="custom-control custom-checkbox outline-info px-0 py-0 rounded">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        data-pathways="primary" data-color="#c6255f"
+                                                                        data-widthStroke=3 id="Pathways_C">
+                                                                    <label
+                                                                        class="custom-control-label text-Medium text-dark m-0 pr-2"
+                                                                        style="font-size: 10px" for="Pathways_C">
+                                                                        مسیرهای اصلی درون شهری
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+
+                                                            <li style="border-color:#bb9836"
+                                                                class="d-inline-block mt-1 pt-1 pr-1 ml-2 liCheckBox">
+                                                                <div
+                                                                    class="custom-control custom-checkbox outline-info px-0 py-0 rounded">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        data-pathways="secondary" data-color="#bb9836"
+                                                                        data-widthStroke=2 id="Pathways_D">
+                                                                    <label
+                                                                        class="custom-control-label text-Medium text-dark m-0 pr-2"
+                                                                        style="font-size: 10px" for="Pathways_D">
+                                                                        مسیرهای ارتباطی درجه2 درون شهری
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <a id="ViewPathwaysInMap"
+                                                        class="btn btn-info waves-effect waves-light py-1">
+                                                        پراکندگی واحد های صنفی
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        @* نحوه نمایش *@
+                        <div class="card z-depth-0 bordered">
+                            <div class="card-header p-0" id="headingD">
+                                <button
+                                    class="btn purple-gradient white-text m-0 py-1 pr-3 text-Medium text-right text-x7 w-100 waves-effect waves-light collapsed"
+                                    type="button" data-toggle="collapse" data-target="#collapseD" aria-expanded="false"
+                                    aria-controls="collapseD">
+                                    <i class="fa fa-cogs fa-2x text-x10 float-right white-text pl-1" aria-hidden="true"></i>
+                                    <span class="mt-2">
+                                        نمایش پراکندگی
+                                    </span>
+                                </button>
+                            </div>
+                            <div id="collapseD" class="collapse" aria-labelledby="headingD" data-parent="#accordionExample">
+                                <div class="card-body p-1 text-center amber lighten-4">
+                                    <div class="Viewcontainer" id=Viewcontainer>
+                                        <ul class="my-0 mr-3 py-0 pr-2">
+                                            <li class="my-1 pt-1">
+                                                <input class="ViewInput" type="radio" id="f-option"
+                                                    data-id="ShowCirclesUnite" name="selector">
+                                                <label for="f-option" class="text-Medium text-x6 mr-0 pr-4"> پراکندگی واحد
+                                                    ها</label>
+                                                <div class="check"></div>
+                                            </li>
+                                            <li class="my-1 pt-1">
+                                                <input class="ViewInput" type="radio" id="s-option" data-id="ShowUnite"
+                                                    name="selector">
+                                                <label for="s-option" class="text-Medium text-x6 mr-0 pr-4"> نمایش
+                                                    مارکر</label>
+                                                <div class="check">
+                                                    <div class="inside"></div>
+                                                </div>
+                                            </li>
+                                            <li class="my-1 pt-1">
+                                                <input class="ViewInput" type="radio" id="t-option" data-id="HeatMap"
+                                                    name="selector">
+                                                <label for="t-option" class="text-Medium text-x6 mr-0 pr-4"> نقشه
+                                                    گرمایی</label>
+                                                <div class="check">
+                                                    <div class="inside"></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <a id="ViewDataInMap" class="btn btn-info waves-effect waves-light py-1">
+                                            پراکندگی واحد های صنفی
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @* جستجوی واحد خاص *@
+                        <div class="card z-depth-0 bordered">
+                            <div class="card-header p-0" id="headingDD">
+                                <button
+                                    class="btn purple-gradient white-text m-0 py-1 pr-3 text-Medium text-right text-x7 w-100 waves-effect waves-light collapseDD"
+                                    type="button" data-toggle="collapse" data-target="#collapseDD" aria-expanded="false"
+                                    aria-controls="collapseDD">
+                                    <i class="fas fa-search fa-2x text-x10 float-right white-text pl-1"
+                                        aria-hidden="true"></i>
+                                    <span class="mt-2">
+                                        جستجوی واحد خاص
+                                    </span>
+                                </button>
+                            </div>
+                            <div id="collapseDD" class="collapse" aria-labelledby="headingDD"
+                                data-parent="#accordionExample">
+                                <div class="card-body p-1 text-center amber lighten-4">
+                                    <h1 class="text-center w-100 text-Bold text-x6 text-dark">
+                                        جستجو بر اساس واحد صنفی
+                                    </h1>
+                                    <hr />
+                                    <input type="text" id="UnitName"
+                                        class="form-control text-right py-0 d-inline-block w-60 text-x6">
+                                    <a class="btn waves-effect waves-light btn-info d-inline-block text-white text-Medium text-x6 mt-3 py-1 px-0 w-30"
+                                        id="Geocoding">جستجو</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        @* تبلیغات *@
+                        <div class="card z-depth-0 bordered">
+                            <div class="card-header p-0" id="headingF">
+                                <button
+                                    class="btn purple-gradient white-text m-0 py-1 pr-3 text-Medium text-right text-x7 w-100 waves-effect waves-light collapsed"
+                                    type="button" data-toggle="collapse" data-target="#collapseF" aria-expanded="false"
+                                    aria-controls="collapseF">
+                                    <i class="fas fa-search-location fa-2x text-x10 float-right white-text pl-1"
+                                        aria-hidden="true"></i>
+                                    <span class="mt-2">
+                                        ثبت تبلیغات
+                                    </span>
+                                </button>
+                            </div>
+                            <div id="collapseF" class="collapse" aria-labelledby="headingF" data-parent="#accordionExample">
+                                <div class="card-body p-1 text-center">
+                                    <h1 class="text-right w-100 text-Bold text-x6 text-dark">
+                                        لورم ایپسوم
+                                    </h1>
+                                    <hr />
+                                    <p class="text-justify w-100 text-Medium text-x6 text-dark">لورم ایپسوم متن ساختگی با
+                                        تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+                                        بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+                                        نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <img src="https://msmt.ir/OpenLayer/OL_Images/logo.png" class="img-fluid mx-auto py-3"
+                        style="height:150px" />
+                    <h1 class="text-Bold text-center text-x12 deep-purple-text">
+                        نقشه ها و مکان برای صنایع
+                    </h1>
+                    <p class="text-dark text-x6 text-Medium text-center px-2">
+                        داده‌های موقعیت مکانی دقیق و ابزارهای قدرتمند توسعه‌دهنده برای تغییر روش حرکت ما در جهان.
+                    </p>
+                    <hr />
+                    <div class="py-5">
+                        <a class="btn waves-effect waves-light btn blue-gradient text-white py-2 px-0 w-40 text-x6 text-Medium text-center w-lg-40"
+                            asp-controller="Account" asp-action="Login">ورود</a>
+                    </div>
+                    <div class="card m-2 rounded"
+                        style="background-image: url(https://msmt.ir/OpenLayer/OL_Images/bg-modal7.png);background-color: transparent;background-size: 100%;text-align: center"
+                        id="loginBody"></div>
+                }
+
+                <div class="attrib">
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <ul class="mx-auto p-1 m-0 blue-gradient"
+                            style="position: absolute;bottom: 10px;width: 90%;right: 10px;border-radius: 50px;box-shadow: 0 0 10px #a5a5a5">
+                            <li class="d-inline-block mx-1 my-0 py-0">
+                                <a asp-controller="#" asp-action="#">
+                                    <i class="fas fa-search text-white text-x8"></i>
+                                </a>
+                            </li>
+                            <li class="d-inline-block mx-1 my-0 py-0">
+                                <a asp-controller="Account" asp-action="Logout">
+                                    <i class="fas fa-sign-out-alt text-white text-x8"></i>
+                                </a>
+                            </li>
+                            <li class="d-inline-block mx-1 my-0 py-0">
+                                <a asp-controller="AdminPanel" asp-action="Main">
+                                    <i class="fa fa-cogs text-white text-x8"></i>
+                                </a>
+                            </li>
+                            <li class="d-inline-block mx-1 my-0 py-0">
+                                <a asp-controller="#" asp-action="#">
+                                    <i class="fa fa-user-circle-o text-white text-x8"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+        <div id="OL_Id_MenoBar" class="OL_Cl_MenoBar py-2">
+            <div id="OL_Id_HomeControl"></div>
+            <div id="OL_Id_FullscreenControl"></div>
+            <div id="OL_Id_RotateControl"></div>
+            <div class="OL_Cl_Controller" data-toggle="modal" data-target="#modalConfirmDelete">
+                <i class="far fa-times-circle text-x9 m-2"></i>
+            </div>
+            <div class="OL_Cl_Controller" onclick="OL.ToggleSidebar()">
+                <i class="fa fa-th-large text-x9 orange-text m-2"></i>
+            </div>
+            <div id="OL_Id_GeolocationControl"></div>
+            <div id="OL_Id_PrintControl" class="OL_Cl_Controller">
+                <i onclick="OL.ShowBasemap()" class="fa fa-globe text-x9 m-2"></i>
+                <div class="popover fade bs-popover-left show Mypopover-left" role="tooltip" id="popover97781"
+                    x-placement="left" style="display:none">
+                    <div class="arrow" style="top: 140px;"></div>
+                    <h3 class="popover-header info-color text-center text-white text-x7">نقشه ها</h3>
+                    <div class="popover-body p-0">
+                        <div class="px-1 pt-1" onclick="OL.SwitchBasemap(0)" style="cursor:pointer">
+                            <img class="img-fluid mx-auto z-depth-1 rounded border border-info"
+                                src="~/openlayer/ol_images/osm.jpg" />
+                        </div>
+                        <div class="px-1 pt-1" onclick="OL.SwitchBasemap(1)" style="cursor:pointer">
+                            <img class="img-fluid mx-auto z-depth-1 rounded border border-info"
+                                src="~/openlayer/ol_images/Watercolor.jpg" />
+                        </div>
+                        <div class="px-1 pt-1" onclick="OL.SwitchBasemap(2)" style="cursor:pointer">
+                            <img class="img-fluid mx-auto z-depth-1 rounded border border-info"
+                                src="~/openlayer/ol_images/OpenTopoMap.jpg" />
+                        </div>
+                        <div class="px-1 pt-1 pb-1" style="cursor:pointer">
+                            <img class="img-fluid mx-auto z-depth-1 rounded border border-info"
+                                src="~/openlayer/ol_images/BingMapsSatellite.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="OL_Id_ZoomControlIn"></div>
+            <div id="OL_Id_ZoomControlOut"></div>
+        </div>
+    </div>
+    <!--Modal: modal Confirm Delete layer-->
+    <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+            <!--Content-->
+            <div class="modal-content text-center z-depth-1" style="background-color: transparent">
+                <!--Header-->
+                <div class="modal-header d-flex justify-content-center" style="background-color: #fff;">
+                    <p class="heading">آیا از حذف لایه ها اطمینان دارید؟</p>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body" style="background-color:rgb(255 ,255 ,255 , 40%);">
+                    <img class="img-fluid mx-auto" src="~/openlayer/ol_images/removelayer.png" />
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer w-100"
+                    style="background-color: #fff;border-bottom-left-radius:5px;border-bottom-right-radius:5px">
+                    <a onclick="OL.RemoveLayer._removeAllLayer()()" data-dismiss="modal"
+                        class="btn btn-success mx-auto text-white">بله</a>
+                    <a class="btn btn-danger waves-effect mx-auto text-white" data-dismiss="modal">خیر</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+
+</div>
+<div id="popup" class="ol-popup" style="left:-500px">
+    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+    <div id="popup-content"></div>
+</div>
+
+@section ScriptsOL {
+    <script>
+        "use strict"
+        var map;
+        OL.LoadMap();
+        OL.ControllerMap();
+        var rangeVal = document.getElementById('range-value');
+        var rangeInp = document.getElementById('range-input');
+        var updateVal = function (val) {
+            document.getElementById('range-value').innerText = val;
+        };
+
+        var rangeVal = document.getElementById('RangeCloset-value');
+        var rangeInp = document.getElementById('RangeCloset');
+        var updateRangeClosetVal = function (val) {
+            document.getElementById('RangeCloset-value').innerText = val;
+        };
+
+        map.once('postcompose', function (event) {
+            document.getElementById("pageLOader").style.display = "none";
+            document.getElementById("map").style.display = "block";
+            //loadjs('/OpenLayer/ShahrestanFull.js');
+            loadjs('/OpenLayer/ProvinceIran.js');
+            loadjs('/OpenLayer/TurfJs/Turf.js');
+            @* let SELECET_Province = OL.LoadProvince();
+            $("#FilterPartA").html(SELECET_Province);
+            $("#ُSelectPathways").html(SELECET_Province); *@
+            OL.InitialGroups();
+        });
+
+        $("#CollectionQuery").on("click", function () {
+            OL.QueryToSql(function (response) {
+                var slider = document.getElementById("range-input");
+                var rangeValue = slider.value;
+                document.getElementById("loaderOSM").style.display = "none";
+                let AllUnite = [];
+                for (var i = 0; i < response.length; i++) {
+                    let lon = parseFloat(response[i].longitude);
+                    let lat = parseFloat(response[i].latitude);
+                    const center = turf.point([lon, lat]);
+                    const radiusKm = rangeValue / 1000;
+                    const options = { steps: 64, units: 'kilometers', properties: { name: 'Circle' } };
+                    const circle = turf.circle(center, radiusKm, options);
+                    const Unite = {
+                        name: response[i].unitName,
+                        color: response[i].fourDigitActivityGroup.fdaG_Color,
+                        coordinates: circle.geometry.coordinates[0]
+                    };
+                    AllUnite.push(Unite)
+                };
+                OL.AddNewLayer.LayerFCPolygon(AllUnite, 1, "layername")();
+            });
+        });
+
+        $("#IUnitCloset").on("click", function () {
+            map.on('click', function (event) {
+                const coordinate3857 = event.coordinate;
+                let coordinate4326 = ol.proj.transform(coordinate3857, 'EPSG:3857', 'EPSG:4326');
+
+                OL.QueryToSql(function (response) {
+                    var slider = document.getElementById("RangeCloset");
+                    var rangeValue = slider.value;
+                    const NumRangeValue = (parseInt(rangeValue, 10)) / 1000;
+                    var point = turf.point(coordinate4326);
+                    var circle = turf.buffer(point, NumRangeValue, { units: 'kilometers' });
+                    OL.AddNewLayer.LayerOnePolygon(circle.geometry.coordinates[0], "rgb(0 ,128 ,255 , 90%)", 2, "rgb(0 ,128 ,255 , 10%)", "_layerName")();
+
+                    let TrueLayer = [];
+                    for (var u = 0; u < response.length; u++) {
+                        var pt = turf.point([response[u].longitude, response[u].latitude]);
+                        var chekLayer = turf.booleanPointInPolygon(pt, circle);
+                        if (chekLayer === true) {
+                            let Lon = parseFloat(response[u].longitude); // num = 123.456
+                            let Lat = parseFloat(response[u].latitude); // num = 123.456       
+                            const Unite = {
+                                unitName: response[u].unitName,
+                                industryGroupTitle: response[u].fourDigitActivityGroup.fdaG_Title,
+                                managingName: response[u].managingName,
+                                phone: response[u].phone,
+                                province: response[u].province,
+                                city: response[u].city,
+                                Type: 'PointLayer',
+                                coordinates: [Lon, Lat]
+                            };
+                            TrueLayer.push(Unite);
+                        };
+                    };
+                    OL.AddNewLayer.LayerFCPointIcone(TrueLayer, -5, 'Allunite', 'markerA')();
+                    OL.FlyToMap.BaseFlyto(coordinate3857, 2000, 12);
+                });
+
+            });
+        });
+
+        $("#ViewDataInMap").on("click", function () {
+            var activeInput = $('input[name="selector"]:checked');
+            var activeDataId = activeInput.filter(':checked').attr('data-id');
+            if (activeDataId === "ShowUnite") {
+                OL.QueryToSql(function (response) {
+                    if (response.length === 0) {
+                        OL.CeartMessage('warning', 'کاربر گرامی', 'دوباره تلاش نمایید...');
+                    } else {
+                        let AllUnite = [];
+                        for (var i = 0; i < response.length; i++) {
+                            let lon = parseFloat(response[i].longitude);
+                            let lat = parseFloat(response[i].latitude);
+                            const Unite = {
+                                unitName: response[i].unitName,
+                                industryGroupTitle: response[i].fourDigitActivityGroup.fdaG_Title,
+                                managingName: response[i].managingName,
+                                phone: response[i].phone,
+                                province: response[i].province,
+                                city: response[i].city,
+                                Type: 'PointLayer',
+                                coordinates: [lon, lat]
+                            };
+                            AllUnite.push(Unite)
+                        };
+
+                        OL.AddNewLayer.LayerFCPointIcone(AllUnite, -5, 'Allunite', 'markerA')();
+                    };
+                });
+            } else if (activeDataId === "ShowCirclesUnite") {
+                OL.QueryToSql(function (response) {
+                    if (response.length === 0) {
+                        OL.CeartMessage('warning', 'کاربر گرامی', 'دوباره تلاش نمایید...');
+                        document.getElementById("loaderOSM").style.display = "none";
+                    } else {
+                        document.getElementById("loaderOSM").style.display = "none";
+                        let AllUnite = [];
+                        for (var i = 0; i < response.length; i++) {
+                            let RawColor_R = response[i].fourDigitActivityGroup.fdaG_RGB_R;
+                            let RawColor_G = response[i].fourDigitActivityGroup.fdaG_RGB_G;
+                            let RawColor_B = response[i].fourDigitActivityGroup.fdaG_RGB_B;
+                            let lon = parseFloat(response[i].longitude);
+                            let lat = parseFloat(response[i].latitude);
+                            const Unite = {
+                                name: response[i].unitName,
+                                color: "rgb(" + RawColor_R + "," + RawColor_G + "," + RawColor_B + ")",
+                                coordinates: [lon, lat]
+                            };
+                            AllUnite.push(Unite);
+                        };
+
+                        OL.AddNewLayer.LayerFCPointColor(AllUnite, 2, 'Allunite')();
+                    };
+                });
+            } if (activeDataId === "HeatMap") {
+                console.log("test");
+            };
+        });
+
+        $('#ViewPathwaysInMap').on('click', function () {
+            let AllPathways = [];
+            const VCP = document.getElementById("ViewcontainerPathways");
+            const checkboxes = VCP.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    const pathways = {
+                        name: checkbox.getAttribute(
+                            "data-pathways"
+                        ),
+                        color: checkbox.getAttribute(
+                            "data-color"
+                        ),
+                        widthStroke: checkbox.getAttribute(
+                            "data-widthStroke"
+                        )
+                    };
+                    AllPathways.push(pathways);
+                }
+            });
+
+            for (var i = 0; i < AllPathways.length; i++) {
+                let _osmID = $("#SelectCityPathways").val();
+                const selectElement = document.getElementById("SelectCityPathways");
+                const selectedOption = selectElement.options[selectElement.selectedIndex];
+                let _query = AllPathways[i].name;
+                let _layerName = AllPathways[i].name;
+                let _colorFill = AllPathways[i].color;
+                let _widthStroke = AllPathways[i].widthStroke;
+                let _lon = selectedOption.getAttribute("data-lon");
+                let _lat = selectedOption.getAttribute("data-lat");
+                console.log(_lon, _lat);
+                document.getElementById("loaderOSM").style.display = "block";
+                OL.GetOsmJson(_osmID, _query, _layerName, _lon, _lat, _colorFill, _widthStroke);
+            }
+        });
+
+        $(document).on("click", "a[data-Login=true]", function (evt) {
+            evt.preventDefault();
+            var targetid = $(this).data("targetid");
+            var targetAction = "@Url.Action("Login", "Account")";
+            var targetURL = targetAction + "/" + targetid;
+            $("#loginBody").load(targetURL);
+        });
+
+
+    </script>
+}

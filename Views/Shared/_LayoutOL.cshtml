@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="title" content="Msmt">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="3 days">
+    <meta name="author" content="عماد سیفی">
+    <meta name="description" content="یک داشبورد مدیریتی در حوزه صنایع و واحدهای صنفی جهت سرمایه گذاری بلند مدت">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta name="keywords" content="صنایع،مدیریت صنایع،واحدهای صنفی،سرمایه گذاری">
+    <meta name="robots" content="index, follow">
+    <title>@ViewData["Title"] - MSMT</title>
+    <link rel="icon" href="~/OpenLayer/OL_Images/Icon.png" type="image/x-icon">
+    <!-- font-->
+    <link href="~/OpenLayer/PersianFont/PersianFontStyle.css" rel="stylesheet" />
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/bootstrap/css/bootstrap.min.css">
+    <!-- font-awesome-n -->
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/font-awesome-n.min.css">
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/font-awesome.min.css">
+    <!-- Style.css -->
+    <link href="~/OpenLayer/OL.css" rel="stylesheet" />
+    <!-- add References toastr message -->
+    <link href="~/OpenLayer/Toastr/toastr.min.css" rel="stylesheet">
+</head>
+
+<body>
+    @RenderBody()
+    <script type="text/javascript" src="~/AdminPanel/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/js/jquery-ui/jquery-ui.min.js "></script>
+    <script type="text/javascript" src="~/AdminPanel/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/js/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="~/OpenLayer/ProvinceAndCityName.js"></script>-->
+    <!--<script src="~/openlayer/tinycolor-master/dist/tinycolor-min.js"></script>-->
+    <script src="~/OpenLayer/Toastr/toastr.min.js"></script>
+    <link rel="stylesheet" href="~/OpenLayer/OpenLayerV5.3.0/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script
+        src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="~/OpenLayer/OpenLayerV5.3.0/ol.js"></script>
+    <script src="~/openlayer/loadjs/loadjs.min.js"></script>
+    <link href="~/OpenLayer/ol-ext/dist/ol-ext.css" rel="stylesheet">
+    <script src="~/OpenLayer/ol-ext/dist/ol-ext.js"></script>
+    <script src="~/OpenLayer/OL.js"></script>
+    <script src="~/OpenLayer/OsmToGeo/osmtogeojson.js"></script>
+    <script src="~/OpenLayer/County.js"></script>
+    @await RenderSectionAsync("ScriptsOL", required: false)
+
+</body>
+
+</html>

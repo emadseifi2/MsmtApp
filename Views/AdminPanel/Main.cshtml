@@ -1,0 +1,513 @@
+﻿@{
+    ViewData["Title"] = "Main";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+<!-- Page-header start -->
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-12 text-right">
+                <i class="fa fa-caret-right text-x8"></i>
+                <h1 class="text-right text-bold d-inline-block p-2 text-x10 text-white border-bottom border-warning w-25">
+                    مدیریت گروه های صنعتی
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+             @if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                <!-- Page-body start -->
+                <div class="page-body" id="OverLoadPageBody">
+                    <div class="row mb-3">
+                        <!--  sale analytics start -->
+                        <div class="col-lg-7 col-md-7 col-12">
+                            <div class="card mb-0">
+                                <div class="card-header mdb-color lighten-2 text-right py-1">
+                                    <i class="fa fa-cog text-x10 text-white"></i>
+                                    <span class="d-inline-block text-Bold text-x7 text-white">واحد های صنعتی نیاز به اصلاح</span>
+                                </div>
+                                <div class="card-block p-1">
+                                    <div id="loaderUniteFixME" class="h-lg-30">
+                                        <div id="QueryLaoder" style="display: block;">
+                                            <div class="loader pb-5"></div>
+                                            <p id="MessageProcess" class="w-100" style="text-align: center">در حال دریافت اطلاعات .لطفا کمی صبر نمایید.</p>
+                                        </div>
+                                    </div>
+                                    <div id="UnitFixMe" style="display:none">
+                                        <div id="data-container"></div>
+                                        <div class="w-100 px-3 d-flex justify-content-center" id="InsertUnit"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card my-2 py-3 bg-c-red total-card z-depth-1">
+                                        <div class="card-block px-0">
+                                            <div class="d-inline-block w-lg-45" style="border-left: 1px solid #fff;">
+                                                <h4 class="text-center text-white">@ViewBag.Count_Group</h4>
+                                                <p class="text-center text-white"> گروه های صنعتی 2 رقمی</p>
+                                            </div>
+                                            <div class="text-center d-inline-block w-lg-45">
+                                                <i class="fa fa-database text-x25 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card my-2 py-3 bg-c-green total-card z-depth-1">
+                                        <div class="card-block px-0">
+                                            <div class="d-inline-block w-lg-45" style="border-left: 1px solid #fff;">
+                                                <h4 class="text-center text-white">@ViewBag.Count_Unite</h4>
+                                                <p class="text-center text-white">تعداد واحد های صنعتی</p>
+                                            </div>
+                                            <div class="text-center d-inline-block w-lg-45">
+                                                <i class="fa fa-industry text-x25 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="card my-2 py-3 bg-info total-card z-depth-1">
+                                        <div class="card-block px-0">
+                                            <div class="d-inline-block w-lg-45" style="border-left: 1px solid #fff;">
+                                                <h4 class="text-center text-white">@ViewBag.Count_UniteFixMe</h4>
+                                                <p class="text-center text-white">واحد های نیاز به اصلاح</p>
+                                            </div>
+                                            <div class="text-center d-inline-block w-lg-45">
+                                                <i class="fa fa-cogs text-x25 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card my-2 py-3 total-card z-depth-1" style="background-color: #ff8124">
+                                        <div class="card-block px-0">
+                                            <div class="d-inline-block w-lg-45" style="border-left: 1px solid #fff;">
+                                                <h4 class="text-center text-white">@ViewBag.Count_Group4Digit</h4>
+                                                <p class="text-center text-white">گروه های صنعتی 4 رقمی</p>
+                                            </div>
+                                            <div class="text-center d-inline-block w-lg-45">
+                                                <i class="fa fa-bars text-x25 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- sale card end -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header mdb-color lighten-2 text-right py-1">
+                                    <i class="fa fa-bar-chart text-x10 text-white"></i>
+                                    <span class="d-inline-block text-Bold text-x7 text-white">مقایسه مکانی اطلاعات</span>
+                                    <select style="float: left;" class="browser-default blue lighten-1 text-white custom-select w-lg-15 d-inline-block z-depth-1 text-Medium text-center py-0 text-x6 mr-2" id="ProvineSelect" onchange="MainClieint.LoadChartMain();"></select>
+                                    <span style="float: left;" class="d-inline-block text-Bold text-x7 text-white mt-2">انتخاب استان:</span>
+                                </div>
+                                <div class="card-block h-lg-40 h-sm-40" id="elmChart" style="display:none">
+                                    <div style="direction:ltr" class="h-lg-40 h-sm-40" id="chartProvonceUnite"></div>
+                                </div>
+                                <div class="card-block h-lg-40 h-sm-40" id="loaderChart">
+                                    <div id="QueryLaoder" style="display: block;">
+                                        <div class="loader pb-5"></div>
+                                        <p id="MessageProcess" class="w-100 mt-5" style="text-align: center">برای نمایش اطلاعات لطفا یک استان را انتخاب نمایید</p>
+                                    </div>
+                                </div>
+                                <div class="card-block h-lg-40 h-sm-40 text-center mx-auto" id="Message" style="display:none">
+                                    <div class="card bg-c-red total-card mt-5 z-depth-1">
+                                        <div class="card-block">
+                                            <div class="text-right">
+                                                <h4 class="text-white mb-3">کاربر گرامی</h4>
+                                                <p class="m-0 text-white">متاسفانه اطلاعاتی از واحد های صنعتی موجود در شهر های  استان انتخابی وجود ندارد. لطفا یک استان دیگر را انتخاب نمایید</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Modal: modalConfirmDelete-->
+                <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                    <div class="modal-dialog modal-md modal-notify modal-danger" role="document">
+                        <!--Content-->
+                        <div id="modalBody" class="modal-content text-center">
+                        </div>
+                        <!--/.Content-->
+                    </div>
+                </div>
+                <!-- Page-body end -->
+            }else
+            {
+                <div class="page-body" id="OverLoadPageBody">
+                    <div class="row mb-3">
+                        <!--  sale analytics start -->
+                        <div class="col-12">
+                            <div class="card mb-0">
+                                <div class="card-header text-right py-1">
+                                    <i class="fa fa-cog text-x10 text-dark"></i>
+                                    <span class="d-inline-block text-Bold text-x7 text-dark">
+                                        ورود به سایت
+                                    </span>
+                                </div>
+                                <div class="card-block p-5 text-center">
+                                    <img src="https://msmt.ir/OpenLayer/OL_Images/logo.png" class="img-fluid mx-auto py-3" style="height:150px" />
+                                    <h1 class="text-Bold text-center text-x12 deep-purple-text">
+                                        نقشه ها و مکان برای صنایع
+                                    </h1>
+                                    <p class="text-dark text-x6 text-Medium text-center px-2">
+                                        داده‌های موقعیت مکانی دقیق و ابزارهای قدرتمند توسعه‌دهنده برای تغییر روش حرکت ما در جهان.
+                                    </p>
+                                    <hr />
+                                    <div class="py-5">
+                                        <a class="btn waves-effect waves-light btn blue-gradient text-white py-2 px-0 w-lg-20 text-x6 text-Medium text-center" asp-controller="Account" asp-action="Login">ورود</a>
+                                    </div>
+                                    <div class="card m-2 rounded" style="background-image: url(https://msmt.ir/OpenLayer/OL_Images/bg-modal7.png);background-color: transparent;background-size: 100%;text-align: center" id="loginBody"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }            
+        </div>
+    </div>
+</div>
+
+<div class="d-none">
+    <div id="Operation">@TempData["Operation"]</div>
+    <div id="Type">@TempData["Type"]</div>
+    <div id="Name">@TempData["Name"]</div>
+</div>
+
+@section AdminPanel_Script{
+    <script type="text/javascript">
+        "use strict"
+        var map;
+        var currentMarkers = [];
+        $(document).on("click", "a[data-UnderConstruction=true]", function (evt) {
+            evt.preventDefault();
+            var targetAction = "@Url.Action("UnderConstruction", "AdminPanel")";
+            $("#OverLoadPageBody").load(targetAction, function () {
+            });
+        });
+
+        //#region Manage IndustryGroup......................................................................
+
+        $(document).on("click", "a[data-IGroupAll=true]", function (evt) {
+            evt.preventDefault();
+            var targetAction = "@Url.Action("IGroup_All", "AdminPanel")";
+            $("#OverLoadPageBody").load(targetAction, function () {
+                let simpleTemplating = (data) => {
+                    var html = '';
+                    for (var i = 0; i < data.length; i++) {
+                        html += '<div class="row mb-1 border-bottom  d-flex justify-content-center">';
+                        html += '<div class="col-lg-3 col-md-3 col-12 text-center"><div class="text-center text-Medium text-x6 text-dark py-1">' + data[i].IndustryGroupTitle + '</div></div>';
+                        html += '<div class="col-lg-3 col-md-3 col-12 text-center"><div class="text-center text-Medium text-x6 text-dark py-1">' + data[i].IndustryGroupFullName + '</div></div>';
+                        html += '<div class="col-lg-1 col-md-1 col-12 text-center"><div class="text-center text-Medium text-x6 text-dark py-1">' + data[i].IndustryGroupCode + '</div></div>';
+                        html += '<div class="col-lg-1 col-md-1 col-12 text-center"><div class="text-center text-Medium text-x6 text-white z-depth-1 py-1" style="background-color:';
+                        html += data[i].IndustryGroupColor + ';border-radius: 45px">' + data[i].IndustryGroupColor + '</div></div>';
+                        html += '<div class="col-lg-2 col-md-2 col-6 text-center">';
+                        html += '<span class="d-inline-block ml-3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="ویرایش اطلاعات">';
+                        html += '<a data-IGroupEdite="true" data-targetid="' + data[i].IndustryGroupId + '" style="cursor:pointer"><i class="fas fa-edit text-x8 text-c-blue"></i></a></span>';
+                        html += '<span class="d-inline-block" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="حذف اطلاعات">';
+                        html += '<a style="cursor:pointer" data-IGroupDelete="true" data-targetid="' + data[i].IndustryGroupId + '"><i class="fas fa-trash-alt text-x8 text-c-red"></i></a></span></div>';
+                        html += '</div>';
+                    }
+                    return html;
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: '/AdminPanel/IGroup_AllMain/',
+                    dataType: "json",
+                    crossDomain: true,
+                    success: function (response) {
+                        console.log(response);
+                        let result = response.$values;
+                        $('#InsertUnit').pagination({
+                            dataSource: result,
+                            pageSize: 15,
+                            callback: function (data, pagination) {
+                                var html = simpleTemplating(data);
+                                $('#data-container').html(html);
+                            }
+                        });
+                    },
+                    error: function (req, status, error) {
+                        document.getElementById("QueryLaoder").style.display = "none";
+                    }
+                });
+            });
+        });
+
+        $(document).on("click", "a[data-IGroupCreate=true]", function (evt) {
+            evt.preventDefault();
+            var targetAction = "@Url.Action("IGroup_Add", "AdminPanel")";
+            $("#OverLoadPageBody").load(targetAction, function () {
+            });
+        });
+
+        $(document).on("click", "a[data-IGroupEdite=true]", function (evt) {
+            evt.preventDefault();
+            var targetid = $(this).data("targetid");
+            var targetAction = "@Url.Action("IGroup_Edit", "AdminPanel")";
+            var targetURL = targetAction + "/" + targetid
+            $("#OverLoadPageBody").load(targetURL, function () {
+            });
+        });
+
+        $(document).on("click", "a[data-IGroupDelete=true]", function (evt) {
+            evt.preventDefault();
+            var targetid = $(this).data("targetid");
+            var targetAction = "@Url.Action("IGroup_Delete", "AdminPanel")";
+            var targetURL = targetAction + "/" + targetid
+            $("#modalBody").load(targetURL, function () {
+                $("#modalConfirmDelete").modal({
+                    keyboard: true
+                }, 'show');
+            });
+        });
+        
+        //#endregion
+
+        //#region Manage FourDigitActivityGroup......................................................................
+        $(document).on("click", "a[data-FDAGALL=true]", function (evt) {
+            evt.preventDefault();
+            var targetAction = "@Url.Action("FDAG_All", "AdminPanel")";
+            $("#OverLoadPageBody").load(targetAction, function () {
+                let simpleTemplating = (data) => {
+                    var html = '';
+                    for (var i = 0; i < data.length; i++) {
+                        html += '<div class="row mb-1 border-bottom  d-flex justify-content-center">';
+                        html += '<div class="col-lg-3 col-md-3 col-12 text-center"><div class="text-center text-Medium text-x6 text-dark py-1">' + data[i].FDAG_Title + '</div></div>';
+                        html += '<div class="col-lg-3 col-md-3 col-12 text-center"><div class="text-center text-Medium text-x6 text-dark py-1">' + data[i].FDAG_FullName + '</div></div>';
+                        html += '<div class="col-lg-1 col-md-1 col-12 text-center"><div class="text-center text-Medium text-x6 text-dark py-1">' + data[i].FDAG_Code + '</div></div>';
+                        html += '<div class="col-lg-1 col-md-1 col-12 text-center"><div class="text-center text-Medium text-x6 text-white z-depth-1 py-1" style="background-color:';
+                        html += data[i].FDAG_Color + ';border-radius: 45px">' + data[i].FDAG_Color + '</div></div>';
+                        html += '<div class="col-lg-2 col-md-2 col-6 text-center">';
+                        html += '<span class="d-inline-block ml-3" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="ویرایش اطلاعات">';
+                        html += '<a data-IGroupEdite="true" data-targetid="' + data[i].FDAG_id + '" style="cursor:pointer"><i class="fas fa-edit text-x8 text-c-blue"></i></a></span>';
+                        html += '<span class="d-inline-block" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="حذف اطلاعات">';
+                        html += '<a style="cursor:pointer" data-IGroupDelete="true" data-targetid="' + data[i].FDAG_id + '"><i class="fas fa-trash-alt text-x8 text-c-red"></i></a></span></div>';
+                        html += '</div>';
+                    }
+                    return html;
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: '/AdminPanel/FDAG_AllMain/',
+                    dataType: "json",
+                    crossDomain: true,
+                    success: function (response) {
+                        console.log(response);
+                        let result = response.$values;
+                        $('#InsertUnit').pagination({
+                            dataSource: result,
+                            pageSize: 15,
+                            callback: function (data, pagination) {
+                                var html = simpleTemplating(data);
+                                $('#data-container').html(html);
+                            }
+                        });
+                    },
+                    error: function (req, status, error) {
+                        document.getElementById("QueryLaoder").style.display = "none";
+                    }
+                });
+            });
+        });
+
+        $(document).on("click", "a[data-FDAGCreate=true]", function (evt) {
+            evt.preventDefault();
+            var targetAction = "@Url.Action("IGroup_Add", "AdminPanel")";
+            $("#OverLoadPageBody").load(targetAction, function () {
+            });
+        });
+
+        $(document).on("click", "a[data-FDAGEdite=true]", function (evt) {
+            evt.preventDefault();
+            var targetid = $(this).data("targetid");
+            var targetAction = "@Url.Action("IGroup_Edit", "AdminPanel")";
+            var targetURL = targetAction + "/" + targetid
+            $("#OverLoadPageBody").load(targetURL, function () {
+            });
+        });
+
+        $(document).on("click", "a[data-FDAGDelete=true]", function (evt) {
+            evt.preventDefault();
+            var targetid = $(this).data("targetid");
+            var targetAction = "@Url.Action("IGroup_Delete", "AdminPanel")";
+            var targetURL = targetAction + "/" + targetid
+            $("#modalBody").load(targetURL, function () {
+                $("#modalConfirmDelete").modal({
+                    keyboard: true
+                }, 'show');
+            });
+        });
+        //#endregion
+
+        //#region Manage IndustryUnit......................................................................
+
+        $(document).on("click", "a[data-IUnitAll=true]", function (evt) {
+            evt.preventDefault();
+            var targetAction = "@Url.Action("IUnit_All", "AdminPanel")";
+            $("#OverLoadPageBody").load(targetAction, function () {
+                MainClieint.CreatTagSelectProvince()
+                    .then(function (CreatButton) {
+                        $('#ProvineSelect').html(CreatButton);
+                    })
+                    .catch(function (error) {
+                        console.error(_ceartMessage('error', 'کاربر گرامی', 'خطا در ساخت المان select'));
+                    });
+            });
+        });
+        
+         $(document).on("click", "a[data-IUnitDetails=true]", function (evt) {
+            var targetid = $(this).data("targetid");
+            MainClieint.IUnitDetails(targetid);
+        });
+
+       $(document).on("click", "a[data-IUnitAddDragDrop=true]", function (evt) {
+            evt.preventDefault();
+            var targetAction = "@Url.Action("IUnit_AddDragDrop", "AdminPanel")";
+            $("#OverLoadPageBody").load(targetAction, function () {
+                loadjs('/AdminPanel/js/Exel.js');
+                MainClieint.CreatTagSelectProvince()
+                    .then(function (CreatButton) {
+                        $('#ProvineSelect').html(CreatButton);
+                    })
+                    .catch(function (error) {
+                        console.error(_ceartMessage('error', 'کاربر گرامی', 'خطا در ساخت المان select'));
+                    });
+            });
+        });
+
+         $(document).on("click", "a[data-IUnitCreate=true]", function (evt) {
+            evt.preventDefault();
+            var targetAction = "@Url.Action("IUnit_Add", "AdminPanel")";
+            $("#OverLoadPageBody").load(targetAction, function () {
+                MainClieint.LoadMap();
+                map.once('rendercomplete', function () {
+                    loadjs('/OpenLayer/ShahrestanFull.js');
+                    loadjs('/OpenLayer/ProvinceIran.js');
+                    loadjs('/OpenLayer/TurfJs/Turf.js');
+                    let SELECET_Province = MainClieint.LoadProvince();
+                    $("#FilterPartA").html(SELECET_Province);
+                    MainClieint.DragDropMarker();
+                    document.getElementById("pageLOader").style.display = "none";
+                    document.getElementById("map").style.display = "block";
+                    MainClieint.CeartMessage("info", "کاربر گرامی", "برای تغییر موقعیت مکانی واحد صنعتی مارکر را بر روی نقشه جابهجا کنید");
+                });
+            });
+        });
+
+         $(document).on("click", "a[data-IUnitEdite=true]", function (evt) {
+            evt.preventDefault();
+            var targetid = $(this).data("targetid");
+            var targetAction = "@Url.Action("IUnit_Edit", "AdminPanel")";
+            var targetURL = targetAction + "/" + targetid
+            $("#OverLoadPageBody").load(targetURL, function () {
+                
+            });
+        });
+
+         $(document).on("click", "a[data-IUnitDelete=true]", function (evt) {
+            evt.preventDefault();
+            var targetid = $(this).data("targetid");
+            var targetAction = "@Url.Action("IUnit_Delete", "AdminPanel")";
+            var targetURL = targetAction + "/" + targetid
+            $("#modalBody").load(targetURL, function () {
+                $("#modalConfirmDelete").modal({
+                    keyboard: true
+                }, 'show');
+            });
+        });
+
+        //#endregion    
+
+         $(document).on("click", "a[data-MangeProvince=true]", function (evt) {
+            evt.preventDefault();
+            var targetAction = "@Url.Action("MangeProvince", "AdminPanel")";
+            $("#OverLoadPageBody").load(targetAction, function () {
+                //loadjs('/AdminPanel/js/Exel.js');                
+            });
+        });   
+
+        let CloseModal = () =>{
+                document.getElementById("IUniteDetails").style.left = "-500px";
+        }
+
+        $('#CloseModal').on("click", function () {
+            document.getElementById("IUniteDetails").style.left = "-500px";
+        });
+
+        window.onload = function () {
+            let Oper = (document.getElementById("Operation").innerHTML).toString();
+            let Type = (document.getElementById("Type").innerHTML).toString();
+            let Name = (document.getElementById("Name").innerHTML).toString();
+            loadjs('/AdminPanel/pages/waves/js/waves.min.js');
+            loadjs('/AdminPanel/js/jquery-slimscroll/jquery.slimscroll.js');
+            loadjs('/AdminPanel/js/jquery.mCustomScrollbar.concat.min.js');
+            loadjs('/AdminPanel/js/pcoded.min.js');
+            loadjs(['/AdminPanel/js/ProvinceAndCityName.js'], 'ProvinceLoad');
+            loadjs.ready('ProvinceLoad', function () {
+                MainClieint.CreatTagSelectProvince()
+                    .then(function (CreatButton) {
+                        $('#ProvineSelect').html(CreatButton);
+                    })
+                    .catch(function (error) {
+                        console.error(_ceartMessage('error', 'کاربر گرامی', 'خطا در ساخت المان select'));
+                    });
+            });
+            loadjs(['/AdminPanel/paginationjs-master/pagination.min.js'], 'paginationLoad');
+            loadjs.ready('paginationLoad', function () {
+                MainClieint.LoadUnitNeetToFix();
+            });
+            //if (typeof $.fn.pagination === 'undefined') {
+            //    loadjs('/AdminPanel/paginationjs-master/pagination.min.js');
+            //}
+
+            switch (Oper) {
+                case "create":
+                    MainClieint.CeartMessage("success", "ثبت یک " + Type + " جدید", "شما موفق به ثبت یک " + Type + " جدید با نام " + Name + " شدید");
+                    break;
+                case "edite":
+                    MainClieint.CeartMessage("warning", "ویرایش " + Type, "شما موفق به ویرایش " + Type + " صنعتی با نام " + Name + " شدید");
+                    break;
+                case "delete":
+                    MainClieint.CeartMessage("error", "حذف " + Type, "شما موفق به حذف یک " + Type + " صنعتی با نام " + Name + " شدید");
+                    break;
+                default:
+                    this.console.log("no message");
+            }
+
+            if (Type === "گروه") {
+                var targetAction = "@Url.Action("IGroup_All", "AdminPanel")";
+                $("#OverLoadPageBody").load(targetAction, function () {
+                });
+            } else if (Type === "واحد") {
+                var targetAction = "@Url.Action("IUnit_All", "AdminPanel")";
+                $("#OverLoadPageBody").load(targetAction, function () {
+                });
+            }
+        };
+    </script>
+}
+
+
+
+

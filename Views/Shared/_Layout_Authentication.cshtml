@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="title" content="Msmt">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="3 days">
+    <meta name="author" content="عماد سیفی">
+    <meta name="description" content="یک داشبورد مدیریتی در حوزه صنایع و واحدهای صنفی جهت سرمایه گذاری بلند مدت">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta name="keywords" content="صنایع،مدیریت صنایع،واحدهای صنفی،سرمایه گذاری">
+    <meta name="robots" content="index, follow">
+    <title>@ViewData["Title"] - MSMT</title>
+    <link rel="icon" href="~/AdminPanel/images/Icon.png" type="image/x-icon">
+    <!-- font-->
+    <link href="~/AdminPanel/PersianFont/PersianFontStyle.css" rel="stylesheet" />
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/bootstrap/css/bootstrap.min.css">
+    <!-- font-awesome-n -->
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/font-awesome-n.min.css">
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/font-awesome.min.css">
+    <!-- Style.css -->
+    <link href="~/OpenLayer/OL.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderBody()
+    <script type="text/javascript" src="~/AdminPanel/js/jquery/jquery.min.js "></script>
+    <script type="text/javascript" src="~/AdminPanel/js/jquery-ui/jquery-ui.min.js "></script>
+    <script type="text/javascript" src="~/AdminPanel/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/js/bootstrap/js/bootstrap.min.js "></script>  
+    @RenderSection("AuthenticationScripts", required: false)
+</body>
+</html>

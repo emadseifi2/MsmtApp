@@ -1,0 +1,5 @@
+User: msmtir
+Pass : 9Cjx4&9CX9qaE#
+آدرس کنترل‌پنل: http://IWH40.airodns.com:8880 یا https://IWH40.airodns.com:8443
+بعد از اینکه دامنه متصل گردید ادرس وب‌سایت به این شکل خواهد بود :http://www.msmt.ir:8443
+بعد از تنظیم و ست شدن دامنه ادرس کنترل‌پنل پلسک به این شکل خواهد بود :http://www.msmt.ir:8880

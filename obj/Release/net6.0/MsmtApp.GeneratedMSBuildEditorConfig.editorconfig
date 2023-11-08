@@ -1,0 +1,137 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MsmtApp
+build_property.RootNamespace = MsmtApp
+build_property.ProjectDir = E:\WebDevelopment\Project\net.Core\MsmtApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\WebDevelopment\Project\net.Core\MsmtApp
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Account/UserManage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVc2VyTWFuYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/FDAG_Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxGREFHX0FkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/FDAG_All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxGREFHX0FsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/FDAG_Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxGREFHX0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/FDAG_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxGREFHX0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/IGroup_Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxJR3JvdXBfQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/IGroup_All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxJR3JvdXBfQWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/IGroup_Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxJR3JvdXBfRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/IGroup_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxJR3JvdXBfRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/IUnit_AddDragDrop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxJVW5pdF9BZGREcmFnRHJvcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/IUnit_All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxJVW5pdF9BbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/IUnit_Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxJVW5pdF9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/IUnit_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxJVW5pdF9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/Main.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxNYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/AdminPanel/UnderConstruction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxVbmRlckNvbnN0cnVjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Components/_sidbareAdminPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50c1xfc2lkYmFyZUFkbWluUGFuZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/MapPanel/OLView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwUGFuZWxcT0xWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Shared/_LayoutAdminPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pblBhbmVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Shared/_Layout_Authentication.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfQXV0aGVudGljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-s6prccrftt
+
+[E:/WebDevelopment/Project/net.Core/MsmtApp/Views/Shared/_LayoutOL.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRPTC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-8bzmtj46b3

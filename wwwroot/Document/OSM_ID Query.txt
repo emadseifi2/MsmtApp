@@ -1,0 +1,8 @@
+دریافت استانهای ایران
+[out:csv(::id,"name")];area(3600304938)->.searchArea;(nwr["boundary"="administrative"]["admin_level"="4"]["place"="province"](area.searchArea););out;>;
+
+
+
+
+دریافت شهرستانهای هر استان
+[out:csv(::id,"name")];area(3603661581)->.searchArea;(nwr["boundary"="administrative"]["admin_level"="5"]["place"="county"](area.searchArea););out;>;

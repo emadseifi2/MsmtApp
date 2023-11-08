@@ -1,0 +1,67 @@
+﻿@model MsmtApp.Models.Class_FourDigitActivityGroup
+
+<div class="row">
+    <!-- Material statustic card start -->
+    <div class="col-md-12">
+        <div class="card mat-stat-card">
+            <div class="card-header blue lighten-1 text-white text-right">
+                <h5>افزودن گروه 4 رقمی جدید</h5>
+                <br />
+                <span class="d-inline-block">شما در حال افزودن اطلاعات گروه 4 رقمی جدیدی می باشید </span>
+            </div>
+            <div class="card-block py-5">
+                <div class="row">
+                    <div class="col-md-8 col-md-8 col-12">
+                        <form asp-controller="AdminPanel" asp-action="IGroup_Add">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-12">
+                                    <div class="form-group text-right w-100">
+                                        <label asp-for="FDAG_Title" class="control-label"></label>
+                                        <input asp-for="FDAG_Title" class="form-control" />
+                                        <span asp-validation-for="FDAG_Title" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-12">
+                                    <div class="form-group text-right w-100">
+                                        <label asp-for="FDAG_FullName" class="control-label"></label>
+                                        <input asp-for="FDAG_FullName" class="form-control" />
+                                        <span asp-validation-for="FDAG_FullName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-12">
+                                    <div class="form-group text-right w-100">
+                                        <label asp-for="FDAG_Code" class="control-label"></label>
+                                        <input asp-for="FDAG_Code" class="form-control" />
+                                        <span asp-validation-for="FDAG_Code" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-12">
+                                    <div class="form-group text-right w-100">
+                                        <label asp-for="FDAG_Color" class="control-label"></label>
+                                        <input asp-for="FDAG_Color" class="form-control">
+                                        <span asp-validation-for="FDAG_Color" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group text-right w-100 mt-5 mb-0">
+                                <button class="btn success-color btn-md btn-block waves-effect waves-light text-center p-2 w-25" type="submit" style="border:none;background-color:transparent;color:#fff;padding: 0.7rem 2rem;">ذخیره</button>
+                                <button class="btn btn-danger btn-md btn-block waves-effect waves-light text-center p-2 w-25" asp-controller="AdminPanel" asp-action="Main" style="border:none;background-color:transparent;color:#fff;padding: 0.7rem 2rem;">انصراف</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-4 col-md-4 col-12">
+                        <img src="./images/Operation_Add.png" class="img-fluid mx-auto" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {    
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

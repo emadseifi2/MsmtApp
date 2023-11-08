@@ -1,0 +1,542 @@
+﻿<div class="row">
+    <!-- Material statustic card start -->
+    <div class="col-md-12">
+        <div class="card mat-stat-card">
+            <div class="card-header blue lighten-1 text-white text-right">
+                <h5>افزودن ، بروزرسانی دسته ای</h5>
+                <br />
+                <span class="d-inline-block">شما در حال افزودن دسته ای واحدهای صنفی می باشید </span>
+            </div>
+            <div class="card-block pb-5">
+                <div id="SavingData" style="display:none;height: 200px"
+                    class="text-center border border-light my-5 py-3">
+                    <div class='loader pb-5'></div>
+                    <p id="MessageProcess" class="w-100" style="position: absolute;bottom: 60px;right: 39%">اطلاعات در
+                        حال ذخیره در بانک اطلاعات می باشد. لطفا کمی صبر نمایید...</p>
+                </div>
+                <div id="ErrorMessages" style="display:none" class="text-center border border-light p-5 mt-4">
+                    <div class="card table-card">
+                        <div class="card-header cyan darken-1 text-right">
+                            <h5 class="text-Bold text-right text-white text-x11">خطاهای مشاهده شده</h5>
+                            <h3 class="text-right text-Medium text-x7 p-0 m-0">لطفا پس از بررسی و رفع خطا های زیر مجدداً
+                                تلاش نمایید</h3>
+                        </div>
+                        <div class="card-block">
+                            <div class="table-responsive" style="max-height: 400px;overflow-y: scroll;height: 400px;">
+                                <table class="table table-hover m-b-0 without-header">
+                                    <tbody id="MessageBodyError"></tbody>
+                                </table>
+                            </div>
+                            <a id="BackTOImportExel"
+                                class="btn py-2 purple-gradient btn-sm text-center waves-effect waves-light w-lg-20 w-sm-100">
+                                <span class="text-Medium text-x6 text-white mr-2">
+                                    بارگزاری مجدد
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="LoadData" class="text-center border border-light p-5 mt-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-center text-bold text-x15">وارد کردن اطلاعات واحد های صنعتی از طریق اکسل
+                                </h3>
+                                <form>
+                                    <div class="form-group">
+                                        <label>فایل اکسل خود را از اینجا</label>
+                                        <input type="file" id="fileUpload" />
+                                        <label>انتخاب و وارد نمایید</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="ResultExel" class="text-center" style="display:none">
+                                    <hr />
+                                    <h3 class="text-center text-Medium text-x8">اطلاعات ورودی اکسل</h3>
+                                    <div id="incloudExel" style="max-height: 350px;overflow-y: scroll;height: 350px">
+                                    </div>
+                                    <hr />
+                                    <a id="BtnEditExelToSql"
+                                        class="btn py-2 peach-gradient btn-sm text-center waves-effect waves-light w-lg-20 w-sm-100">
+                                        <i class="fa fa-pencil-square-o text-x8 text-white m-0"></i>
+                                        <span class="text-Medium text-x6 text-white mr-2">
+                                            بروزرسانی اطلاعات
+                                        </span>
+                                    </a>
+                                    <a id="BtnAddExelToSql"
+                                        class="btn py-2 purple-gradient btn-sm text-center waves-effect waves-light w-lg-20 w-sm-100">
+                                        <i class="fa fa-floppy-o text-x8 text-white m-0"></i>
+                                        <span class="text-Medium text-x6 text-white mr-2">
+                                            ذخیره اطلاعات
+                                        </span>
+                                    </a>
+                                    <a id="BtnNewAddExelToSql"
+                                        class="btn py-2 aqua-gradient btn-sm text-center waves-effect waves-light w-lg-20 w-sm-100">
+                                        <i class="fas fa-plus text-x8 text-white m-0"></i>
+                                        <span class="text-Medium text-x6 text-white mr-2">
+                                            بارگزاری مجدد
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var jsonResult = [];
+    $('#fileUpload').change(function (e) {
+        var file = e.target.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.readAsBinaryString(file);
+            reader.onload = function (e) {
+                var data = e.target.result;
+                var workbook = XLSX.read(data, { type: 'binary' });
+                var sheet_name_list = workbook.SheetNames;
+                sheet_name_list.forEach(function (y) {
+                    var worksheet = workbook.Sheets[y];
+                    var headers = {};
+                    var data = [];
+                    for (z in worksheet) {
+                        if (z[0] === '!') continue;
+                        //parse out the column, row, and value
+                        var col = z.substring(0, 1);
+                        var row = parseInt(z.substring(1));
+                        var value = worksheet[z].v;
+
+                        //store header names
+                        if (row == 1) {
+                            headers[col] = value;
+                            continue;
+                        }
+
+                        if (!data[row]) data[row] = {};
+                        data[row][headers[col]] = value;
+                    }
+                    //drop those first two rows which are empty
+                    data.shift();
+                    data.shift();
+                    jsonResult[y] = data;
+                });
+                let MakeTableResult = [];
+                let ResultExel = jsonResult.Sheet2;
+                MakeTableResult.push('<table class="table table-sm">');
+                MakeTableResult.push('<thead><tr>');
+                MakeTableResult.push('<th scope="col">ردیف</th>');
+                MakeTableResult.push('<th scope="col">نام</th>');
+                MakeTableResult.push('<th scope="col">استان</th>');
+                MakeTableResult.push('<th scope="col">شهر</th>');
+                MakeTableResult.push('<th scope="col">مدیر عامل</th>');
+                MakeTableResult.push('</tr></thead>');
+                MakeTableResult.push('<tbody>');
+                for (var i = 0; i < ResultExel.length; i++) {
+                    MakeTableResult.push('<tr>');
+                    MakeTableResult.push('<td>');
+                    MakeTableResult.push(ResultExel[i].IndustryId);
+                    MakeTableResult.push('</td>');
+                    MakeTableResult.push('<td>');
+                    MakeTableResult.push(ResultExel[i].UnitName);
+                    MakeTableResult.push('</td>');
+                    MakeTableResult.push('<td>');
+                    MakeTableResult.push(ResultExel[i].Province);
+                    MakeTableResult.push('</td>');
+                    MakeTableResult.push('<td>');
+                    MakeTableResult.push(ResultExel[i].City);
+                    MakeTableResult.push('</td>');
+                    MakeTableResult.push('<td>');
+                    MakeTableResult.push(ResultExel[i].ManagingName);
+                    MakeTableResult.push('</td>');
+                    MakeTableResult.push('<td>');
+                }
+                MakeTableResult.push('</tbody></table>');
+                document.getElementById("incloudExel").innerHTML = MakeTableResult.join('');
+                document.getElementById("ResultExel").style.display = "block";
+            };
+            reader.onerror = function (ex) {
+                console.log(ex);
+            };
+        }
+        return false;
+    });
+
+    let ConvertDigitCode2 = (str) => {
+        let numberPattern = /\d+/; // عبارت منظم برای یافتن اعداد
+        let match = str.match(numberPattern); // استخراج عدد از رشته
+        if (match) {
+            let extractedNumber = parseInt(match[0]); // تبدیل عدد استخراج شده به عدد صحیح
+            return extractedNumber; // چاپ عدد استخراج شده
+        } else {
+            return 1;
+        };
+    };
+
+    $("#BtnAddExelToSql").on("click", function () {
+        document.getElementById("LoadData").style.display = "none";
+        document.getElementById("SavingData").style.display = "block";
+
+        var DuplicateNames = [];
+        let seenUnitNames = {}; // یک شیء کمکی برای ذخیره واحدهای صنعتی قبلی
+        let seenUnitProvinces = {}; // یک شیء کمکی برای ذخیره استان‌های قبلی واحدهای صنعتی
+        var AddIndustrialUnitExelDTOs = [];
+        let ResultExel = jsonResult.Sheet2;
+        console.log(ResultExel);
+        var ErrorMessage = [];
+        for (var i = 0; i < ResultExel.length; i++) {
+            if (!ResultExel[i].Province) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد Province در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].City) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد City در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].Latitude) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد Latitude در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].Longitude) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد Longitude در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].FDAG_id) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد DigitActivityGroup4 در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].FixMe) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد FixMe در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].SourceData) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد SourceData در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            let fixMeValue = ResultExel[i].FixMe; // دریافت مقدار FixMe از شیء جاوااسکریپتی
+            if (fixMeValue !== "yes" && fixMeValue !== "no") { // بررسی مقدار FixMe
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد FixMe در ردیف ' + (i + 1) + 'مقداری غیر از مقدار yes و یا no دارد');
+                ErrorMessage.push('</td></tr>');
+            }
+        };
+
+        if (ErrorMessage.length) {
+            document.getElementById("SavingData").style.display = "none";
+            document.getElementById("MessageBodyError").innerHTML = ErrorMessage.join('');
+            document.getElementById("ErrorMessages").style.display = "block";
+        } else {
+            for (var i = 0; i < ResultExel.length; i++) {
+                let Unit_UnitName;
+                let Unit_Phone;
+                let Unit_ManagingName;
+                let Unit_CentralOffice;
+                let FDAG_id = ResultExel[i].FDAG_id;
+                console.log(FDAG_id);
+
+                if (!ResultExel[i].UnitName) {
+                    Unit_UnitName = 'فاقد'
+                } else {
+                    Unit_UnitName = ResultExel[i].UnitName;
+                };
+
+                if (!ResultExel[i].Phone) {
+                    Unit_Phone = 'فاقد'
+                } else {
+                    Unit_Phone = ResultExel[i].Phone;
+                };
+
+                if (!ResultExel[i].ManagingName) {
+                    Unit_ManagingName = 'فاقد'
+                } else {
+                    Unit_ManagingName = ResultExel[i].ManagingName;
+                };
+
+                if (!ResultExel[i].CentralOffice) {
+                    Unit_CentralOffice = 'فاقد'
+                } else {
+                    Unit_CentralOffice = ResultExel[i].CentralOffice;
+                };
+
+                let lon = ResultExel[i].Longitude;
+                let lat = ResultExel[i].Latitude;
+
+                let unitName = Unit_UnitName.trim(); // دریافت نام واحد صنعتی و حذف فاصله‌های اضافی
+                let Dag4 = FDAG_id.trim(); // دریافت نام استان و حذف فاصله‌های اضافی
+
+                if (seenUnitNames[unitName]) { // بررسی وجود نام واحد صنعتی در شیء کمکی
+                    if (seenUnitProvinces[unitName] && seenUnitProvinces[unitName] !== Dag4) { // بررسی وجود نام استان در شیء کمکی
+                        DuplicateNames.push(unitName);
+                    } else {
+                        seenUnitProvinces[unitName] = Dag4; // ذخیره نام استان در شیء کمکی
+                        DuplicateNames.push(unitName);
+                    }
+                } else {
+                    seenUnitNames[unitName] = true; // ذخیره واحد صنعتی در شیء کمکی
+                    seenUnitProvinces[unitName] = Dag4; // ذخیره نام استان در شیء کمکی
+                    var Unit = {
+                        UnitName: Unit_UnitName,
+                        Province: ResultExel[i].Province,
+                        City: ResultExel[i].City,
+                        Phone: Unit_Phone.toString(),
+                        ManagingName: Unit_ManagingName,
+                        Longitude: lon.toFixed(7).toString(),
+                        Latitude: lat.toFixed(7).toString(),
+                        CentralOffice: Unit_CentralOffice,
+                        FixMe: ResultExel[i].FixMe,
+                        SourceData: ResultExel[i].SourceData,
+                        FDAG_id: ConvertDigitCode2(FDAG_id)
+                    }
+                    AddIndustrialUnitExelDTOs.push(Unit);
+                }
+            };
+
+            if (DuplicateNames.length) {
+                MainClieint.CeartMessage('error', 'کاربر گرامی', 'تعداد ' + DuplicateNames.length + ' از واحد های صنعتی تکراری بودند.مابقی در حال ذخیره در بانک اطلاعاتی می باشند')
+            }
+
+            console.log(AddIndustrialUnitExelDTOs);
+            $.ajax({
+                "type": "POST",
+                "url": '/AdminPanel/IUnit_AddExelData/',
+                "dataType": "json",
+                "contentType": "application/json",
+                "data": JSON.stringify(AddIndustrialUnitExelDTOs),
+                success: function (result) {
+                    document.getElementById("SavingData").style.display = "none";
+                    document.getElementById("ResultExel").style.display = "none";
+                    document.getElementById("LoadData").style.display = "block";
+                    document.getElementById("fileUpload").value = "";
+                    document.getElementById("incloudExel").innerHTML = "";
+                    MainClieint.CeartMessage('success', 'کاربر گرامی', 'اطلاعات شما با موفقیت ذخیره گردید...');
+                }, error: function (xhr, status, error) {
+                    document.getElementById("SavingData").style.display = "none";
+                    document.getElementById("ResultExel").style.display = "none";
+                    document.getElementById("LoadData").style.display = "block";
+                    document.getElementById("fileUpload").value = "";
+                    document.getElementById("incloudExel").innerHTML = "";
+                    if (xhr.status == 0) {
+                        MainClieint.CeartMessage("error", "کاربر گرامی ...", "ارتباط با سرور قطع شده است");
+                    } else if (xhr.status == 404) {
+                        MainClieint.CeartMessage("error", "کاربر گرامی ...", "آدرس درخواست شده یافت نشد");
+                    } else if (xhr.status == 500) {
+                        MainClieint.CeartMessage("error", "کاربر گرامی ...", "خطایی در سمت سرور رخ داده است");
+                    } else {
+                        MainClieint.CeartMessage('success', 'کاربر گرامی', xhr + status + error);
+                    }
+                }
+            });
+        }
+    });
+
+    $("#BtnEditExelToSql").on("click", function () {
+        document.getElementById("LoadData").style.display = "none";
+        document.getElementById("SavingData").style.display = "block";
+
+        var DuplicateNames = [];
+        let seenUnitNames = {}; // یک شیء کمکی برای ذخیره واحدهای صنعتی قبلی
+        let seenUnitProvinces = {}; // یک شیء کمکی برای ذخیره استان‌های قبلی واحدهای صنعتی
+        var EditIndustrialUnitExelDTOs = [];
+        let ResultExel = jsonResult.Sheet2;
+        var ErrorMessage = [];
+        for (var i = 0; i < ResultExel.length; i++) {
+            if (!ResultExel[i].Province) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد Province در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].City) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد City در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].Latitude) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد Latitude در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].Longitude) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد Longitude در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].FDAG_id) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد FDAG_id در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].FixMe) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد FixMe در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].SourceData) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد SourceData در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            if (!ResultExel[i].IndustryGroupId) {
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد گروه فعاليت 2 رقمي در ردیف ' + (i + 1) + ' خالی می باشد');
+                ErrorMessage.push('</td></tr>');
+            }
+            let fixMeValue = ResultExel[i].FixMe; // دریافت مقدار FixMe از شیء جاوااسکریپتی
+            if (fixMeValue !== "yes" && fixMeValue !== "no") { // بررسی مقدار FixMe
+                ErrorMessage.push('<tr class="p-0 m-0 bg-c-red"><td class="py-1"><div class="d-inline-block align-middle" ><div class="d-inline-block" ><i class="fas fa-question text-dark text-x12 pt-1"></i></div></div></td>');
+                ErrorMessage.push('<td class="text-right pb-1 pt-2 text-dark">');
+                ErrorMessage.push('فیلد FixMe در ردیف ' + (i + 1) + 'مقداری غیر از مقدار yes و یا no دارد');
+                ErrorMessage.push('</td></tr>');
+            }
+        };
+
+        if (ErrorMessage.length) {
+            document.getElementById("SavingData").style.display = "none";
+            document.getElementById("MessageBodyError").innerHTML = ErrorMessage.join('');
+            document.getElementById("ErrorMessages").style.display = "block";
+        } else {
+            for (var i = 0; i < ResultExel.length; i++) {
+                let Unit_UnitName;
+                let Unit_Phone;
+                let Unit_ManagingName;
+                let Unit_CentralOffice;
+                let FDAG_id = ResultExel[i].FDAG_id;
+                console.log(FDAG_id)
+
+                if (!ResultExel[i].UnitName) {
+                    Unit_UnitName = 'فاقد'
+                } else {
+                    Unit_UnitName = ResultExel[i].UnitName;
+                };
+
+                if (!ResultExel[i].Phone) {
+                    Unit_Phone = 'فاقد'
+                } else {
+                    Unit_Phone = ResultExel[i].Phone;
+                };
+
+                if (!ResultExel[i].ManagingName) {
+                    Unit_ManagingName = 'فاقد'
+                } else {
+                    Unit_ManagingName = ResultExel[i].ManagingName;
+                };
+
+                if (!ResultExel[i].CentralOffice) {
+                    Unit_CentralOffice = 'فاقد'
+                } else {
+                    Unit_CentralOffice = ResultExel[i].CentralOffice;
+                };
+
+                let lon = ResultExel[i].Longitude;
+                let lat = ResultExel[i].Latitude;
+
+                let unitName = Unit_UnitName.trim(); // دریافت نام واحد صنعتی و حذف فاصله‌های اضافی
+                let Dag4 = FDAG_id.trim(); // دریافت نام استان و حذف فاصله‌های اضافی
+
+                if (seenUnitNames[unitName]) { // بررسی وجود نام واحد صنعتی در شیء کمکی
+                    if (seenUnitProvinces[unitName] && seenUnitProvinces[unitName] !== Dag4) { // بررسی وجود نام استان در شیء کمکی
+                        DuplicateNames.push(unitName);
+                    } else {
+                        seenUnitProvinces[unitName] = Dag4; // ذخیره نام استان در شیء کمکی
+                        DuplicateNames.push(unitName);
+                    }
+                } else {
+                    seenUnitNames[unitName] = true; // ذخیره واحد صنعتی در شیء کمکی
+                    seenUnitProvinces[unitName] = Dag4; // ذخیره نام استان در شیء کمکی
+                    var Unit = {
+                        UnitName: Unit_UnitName,
+                        Province: ResultExel[i].Province,
+                        City: ResultExel[i].City,
+                        Phone: Unit_Phone.toString(),
+                        ManagingName: Unit_ManagingName,
+                        Longitude: lon.toFixed(7).toString(),
+                        Latitude: lat.toFixed(7).toString(),
+                        CentralOffice: Unit_CentralOffice,
+                        FixMe: ResultExel[i].FixMe,
+                        SourceData: ResultExel[i].SourceData,
+                        FDAG_id: ConvertDigitCode2(ResultExel[i].FDAG_id)
+                    }
+                    EditIndustrialUnitExelDTOs.push(Unit);
+                }
+            };
+
+            if (DuplicateNames.length) {
+                MainClieint.CeartMessage('error', 'کاربر گرامی', 'تعداد ' + DuplicateNames.length + ' از واحد های صنعتی تکراری بودند.مابقی در حال ذخیره در بانک اطلاعاتی می باشند')
+            }
+
+            console.log(EditIndustrialUnitExelDTOs);
+            $.ajax({
+                "type": "POST",
+                "url": '/AdminPanel/IUnit_EditExelData/',
+                "dataType": "json",
+                "contentType": "application/json",
+                "data": JSON.stringify(EditIndustrialUnitExelDTOs),
+                success: function (result) {
+                    document.getElementById("SavingData").style.display = "none";
+                    document.getElementById("ResultExel").style.display = "none";
+                    document.getElementById("LoadData").style.display = "block";
+                    document.getElementById("fileUpload").value = "";
+                    document.getElementById("incloudExel").innerHTML = "";
+                    MainClieint.CeartMessage('success', 'کاربر گرامی', 'اطلاعات شما با موفقیت بروزرسانی گردید...');
+                }, error: function (xhr, status, error) {
+                    document.getElementById("SavingData").style.display = "none";
+                    document.getElementById("ResultExel").style.display = "none";
+                    document.getElementById("LoadData").style.display = "block";
+                    document.getElementById("fileUpload").value = "";
+                    document.getElementById("incloudExel").innerHTML = "";
+                    if (xhr.status == 0) {
+                        MainClieint.CeartMessage("error", "کاربر گرامی ...", "ارتباط با سرور قطع شده است");
+                    } else if (xhr.status == 404) {
+                        MainClieint.CeartMessage("error", "کاربر گرامی ...", "آدرس درخواست شده یافت نشد");
+                    } else if (xhr.status == 500) {
+                        MainClieint.CeartMessage("error", "کاربر گرامی ...", "خطایی در سمت سرور رخ داده است");
+                    } else {
+                        MainClieint.CeartMessage('success', 'کاربر گرامی', xhr + status + error);
+                    }
+                }
+            });
+        }
+    });
+
+    $("#BackTOImportExel").on("click", function () {
+        document.getElementById("ErrorMessages").style.display = "none";
+        document.getElementById("SavingData").style.display = "none";
+        document.getElementById("ResultExel").style.display = "none";
+        document.getElementById("LoadData").style.display = "block";
+        document.getElementById("fileUpload").value = "";
+        document.getElementById("incloudExel").innerHTML = "";
+    });
+    $("#BtnNewAddExelToSql").on("click", function () {
+        document.getElementById("ResultExel").style.display = "none";
+        document.getElementById("LoadData").style.display = "block";
+        document.getElementById("fileUpload").value = "";
+        document.getElementById("incloudExel").innerHTML = "";
+    });
+</script>

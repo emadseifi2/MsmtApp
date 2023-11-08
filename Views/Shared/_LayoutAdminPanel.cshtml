@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="title" content="Msmt">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="3 days">
+    <meta name="author" content="عماد سیفی">
+    <meta name="description" content="یک داشبورد مدیریتی در حوزه صنایع و واحدهای صنفی جهت سرمایه گذاری بلند مدت">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta name="keywords" content="صنایع،مدیریت صنایع،واحدهای صنفی،سرمایه گذاری">
+    <meta name="robots" content="index, follow">
+    <title>@ViewData["Title"] - MSMT</title>
+    <link rel="icon" href="~/AdminPanel/images/Icon.png" type="image/x-icon">
+    <!-- font-->
+    <link href="~/AdminPanel/PersianFont/PersianFontStyle.css" rel="stylesheet" />
+    <!-- waves.css -->
+    <link rel="stylesheet" href="~/AdminPanel/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/bootstrap/css/bootstrap.min.css">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="~/AdminPanel/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <!-- themify icon -->
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/icon/themify-icons/themify-icons.css">
+    <!-- font-awesome-n -->
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/font-awesome-n.min.css">
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/font-awesome.min.css">
+    <!-- scrollbar.css -->
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/jquery.mCustomScrollbar.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="~/AdminPanel/css/style.css">
+
+    <!-- add References toastr message -->
+    <link href="~/AdminPanel/Toastr/toastr.min.css" rel="stylesheet" />
+    <link href="~/AdminPanel/paginationjs-master/pagination.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    
+<div id="IUniteDetails" class="IuniteDetails">
+    <div class="card m-0" id="IUniteDetails_block"></div>
+</div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <div class="mobile-search waves-effect waves-light">
+                            <div class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend search-close"><i class="ti-close input-group-text"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter Keyword">
+                                        <span class="input-group-append search-btn"><i class="ti-search input-group-text"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="index.html">
+                            <img class="img-fluid mr-5" style="height:50px" src="./images/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-options waves-effect waves-light">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <div class="pcoded-content">
+                        @RenderBody()
+                    </div>
+                    <nav class="pcoded-navbar">
+                        <partial name="~/Views/Components/_sidbareAdminPanel.cshtml" />
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/AdminPanel/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="~/AdminPanel/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/AdminPanel/js/pcoded.min.js"></script>
+    <script src="~/AdminPanel/js/vertical/vertical-layout.min.js"></script>
+    <script src="~/AdminPanel/amcharts4/core.js"></script>
+    <script src="~/AdminPanel/amcharts4/charts.js"></script>
+    <script src="~/AdminPanel/amcharts4/themes/animated.js"></script>   
+    <script src="//unpkg.com/loadjs@latest/dist/loadjs.min.js"></script>
+    <script src="~/AdminPanel/Toastr/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://openlayers.org/en/v6.6.1/css/ol.css" type="text/css">
+    <script src="https://openlayers.org/en/v6.6.1/build/ol.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.1/proj4.js"></script>   
+    <script src="~/AdminPanel/js/MainClieint.js"></script>
+    @RenderSection("AdminPanel_Script", required: false)
+</body>
+</html>
+
+@*  msmtir
+    9Cjx4&9CX9qaE#
+    آدرس کنترل‌پنل: http://IWH40.airodns.com:8880 یا https://IWH40.airodns.com:8443
+    بعد از اینکه دامنه متصل گردید ادرس وب‌سایت به این شکل خواهد بود :http://www.msmt.ir:8443
+    بعد از تنظیم و ست شدن دامنه ادرس کنترل‌پنل پلسک به این شکل خواهد بود :http://www.msmt.ir:8880*@
+
+
+

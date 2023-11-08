@@ -1,0 +1,130 @@
+﻿@model IEnumerable<MsmtApp.Models.Class_IndustryGroup>
+<div class="row">
+    <!-- Material statustic card start -->
+    <div class="col-md-12">
+        <div class="card mat-stat-card">
+            <div class="card-block py-3 text-right">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <a data-IUnitAddDragDrop="true" class="btn z-depth-1 py-2 purple-gradient btn-sm text-center waves-effect waves-light w-100">
+                            <i class="fas fa-plus text-x8 text-white m-0"></i>
+                            <span class="text-Medium text-x6 text-white mr-2">
+                                افزودن ، بروزرسانی دسته ای
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row row d-flex justify-content-center">
+                    <div class="col-12">
+                        <div id="FormQueryOsm">
+                            <div class="row">
+                                <div class="col-12 mt-md-5 mt-lg-5">
+                                    <hr />
+                                    <p class="text-right text-Bold text-x10 mb-4">مدیریت واحد های صنعتی</p>
+                                    <p>
+                                        از این قسمت شما می توانید واحد های صنعتی موجود در بانک اطلاعاتی را مدیریت نمایید.به دلیل حجم بالای اطلاعات ، لطفا اول با استفاد از فیلتر هایی که در پایین قرار گرفته ابتدا محدوده گزارش گیری خود را مشخص نمایید
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row my-4 d-flex justify-content-center">
+                                <div class="col-lg-2 col-md-2 col-4 text-center">
+                                    <div class="form-group mb-lg-3 mb-md-3">
+                                        <label class="control-label text-left d-inline-block w-30 text-x6">
+                                            گروه صنعتی
+                                        </label>
+                                        <select class="browser-default custom-select w-60 z-depth-1 text-white purple lighten-1 py-2 text-Medium text-center text-x6 mr-2" id="IndustrialGroupSelect">
+                                            <option class="text-Medium text-center text-x6" id="AllGroup" selected="">
+                                                ...انتخاب نمایید
+                                            </option>
+                                            @foreach (var item in Model)
+                                            {
+                                                <option class="text-Medium text-center text-x6" id="NoAllGrouphh" value="@item.IndustryGroupId">
+                                                    @item.IndustryGroupTitle
+                                                </option>
+                                            }
+                                            <option class="text-Medium text-center text-x6" id="AllGroup" value="#">
+                                                تمامی گروه ها
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-4 text-center">
+                                    <div class="form-group mb-lg-3 mb-md-3">
+                                        <label class="control-label text-left d-inline-block w-30 text-x6">
+                                            استان
+                                        </label>
+                                        <select class="browser-default pink lighten-1 text-white custom-select w-60 z-depth-1 text-Medium text-center py-2 text-x6 mr-2" id="ProvineSelect" onchange="MainClieint.OnChangeProvin();"></select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-4 text-center">
+                                    <div class="form-group mb-lg-3 mb-md-3">
+                                        <label class="control-label text-left d-inline-block w-30 text-x6">
+                                            شهر
+                                        </label>
+                                        <select class="browser-default red lighten-1 text-white custom-select w-60 z-depth-1 text-Medium text-center text-x6 py-2 mr-2" id="CitySelect"></select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-12 text-center">
+                                    <div class="form-group mb-lg-3 mt-md-4">
+                                        <a onclick="MainClieint.CallUnitMain()" class="btn py-2 z-depth-1 btn-info btn-sm text-center waves-effect waves-light w-100">
+                                            <i class="fa fa-search text-x8 text-white m-0"></i>
+                                            <span class="text-Medium text-x6 text-white mr-2">
+                                                نمایش واحد ها
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-12 col-md-10 col-12">
+                                    <div id="QueryLaoder" style="display:none" class="my-5 py-3">
+                                        <div class='loader pb-5'></div>
+                                        <p id="MessageProcess" class="w-100" style="position: absolute;bottom: 60px;right: 39%">در حال دریافت اطلاعات از OSM .لطفا کمی صبر نمایید.</p>
+                                    </div>
+                                    <div id="LoadDataUnite" class="text-center" style="display:none">
+                                        <div class="row d-flex justify-content-center purple darken-3 z-depth-1 mx-1 mb-2" style="border-radius:3px">
+                                            <div class="col-lg-3 col-md-3 col-6">
+                                                <div class="text-center text-Bold text-x6 text-white py-1">
+                                                    نام واحد
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-6">
+                                                <div class="text-center text-Bold text-x6 text-white py-1">
+                                                    استان
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-6">
+                                                <div class="text-center text-Bold text-x6 text-white py-1">
+                                                    شهر
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-6">
+                                                <div class="text-center text-Bold text-x6 text-white py-1">
+                                                    گروه صنعتی
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-6">
+                                                <div class="text-center text-Bold text-x6 text-white py-1">
+                                                    FixMe
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-6">
+                                                <div class="text-center text-Bold text-x6 text-white py-1">
+                                                    کنترل ها
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="data-container"></div>
+                                        <div class="w-100 px-3 d-flex justify-content-center" id="InsertUnit"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

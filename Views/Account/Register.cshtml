@@ -1,0 +1,69 @@
+﻿@model MsmtApp.Models.Register_ViewModel
+
+@{
+    ViewData["Title"] = "OLView";
+    Layout = "~/Views/Shared/_Layout_Authentication.cshtml";
+}
+
+<div class="pageLOader">
+    <div class="container z-depth-2 py-lg-5 py-md-5 rgba-blue-grey-light panel-Authentication">
+        <section class="dark-grey-text text-center text-lg-left">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 col-12 mb-4 mb-lg-0 text-right">
+                    <img src="../OpenLayer/OL_Images/logo.png" class="img-fluid py-3" style="height:150px" />
+                    <h3 class="text-Bold text-right text-x15 text-white">
+                        لورم ایپسوم متن ساختگی
+                    </h3>
+                    <div class="font-weight-bold yellow-text my-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</div>
+                    <div class="text-Medium text-justify text-x7 text-white">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای ایجاد کرد
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                    <form asp-controller="Account" asp-action="Register" class="w-lg-60 mx-auto rgba-teal-light p-4 rounded z-depth-1">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="info-color z-depth-1 py-0 rounded d-flex justify-content-center py-1">
+                            <span class="text-center w-100 text-Bold text-white text-x7">ثبت نام</span>
+                        </div>
+                        <hr />
+                        <div class="form-group text-right">
+                            <input asp-for="name" class="form-control text-right d-inline-block w-60 text-x6" placeholder="نام" />
+                            <span asp-validation-for="name" class="text-danger text-right text-Medium text-x6"></span>
+                        </div>
+                        <div class="form-group text-right">
+                            <input asp-for="username" class="form-control text-right d-inline-block w-60 text-x6" placeholder="نام کاربری" />
+                            <span asp-validation-for="username" class="text-danger text-right text-Medium text-x6"></span>
+                        </div>
+                        <div class="form-group text-right">
+                            <input asp-for="password" class="form-control text-right d-inline-block w-60 text-x6" placeholder="رمز عبور" />
+                            <span asp-validation-for="password" class="text-danger text-right text-Medium text-x6"></span>
+                        </div>
+                        <div class="form-group text-right">
+                            <input asp-for="confirmPassword" class="form-control text-right d-inline-block w-60 text-x6" placeholder="تایید رمز عبور" />
+                            <span asp-validation-for="confirmPassword" class="text-danger text-right text-Medium text-x6"></span>
+                        </div>
+                        <hr/>
+                         <div class="row">
+                            <div class="col-lg-6 col-12">
+                                <button class="btn success-color btn-md btn-block waves-effect waves-light text-center p-2 w-100" type="submit" style="border:none;background-color:transparent;color:#fff;padding: 0.7rem 2rem;">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa fa-user-plus text-x8 ml-2" aria-hidden="true"></i>
+                                        <p class="m-0">ذخیره</p>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <button asp-controller="Account" asp-action="Login" class="btn info-color btn-md btn-block waves-effect waves-light text-center p-2 w-100" style="border:none;background-color:transparent;color:#fff;padding: 0.7rem 2rem;">
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fa fa-sign-in text-x8 ml-2" aria-hidden="true"></i>
+                                        <p class="m-0">ورود</p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>                        
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
